@@ -14,6 +14,7 @@ Suggested structure:
 week-01/submissions/your-name/
 ├── README.md
 ├── notes.md
+├── progress.md           (optional, from templates/progress-tracker.md)
 ├── challenge/            (optional)
 │   ├── architecture.png
 │   └── pillars.md

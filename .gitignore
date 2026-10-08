@@ -1,0 +1,6 @@
+# Private reference material (not for learners)
+*.xlsx
+cloud-practitioner-02.pdf
+
+# macOS
+.DS_Store

@@ -18,6 +18,13 @@ Use this file before starting Week 2. Answers are discussed in class.
 13. Do AWS Budgets stop spending automatically?
 14. Which cloud certification do we prepare for, and what are its four domains?
 15. What are the four ways to access AWS?
+16. What is the difference between elasticity and scalability?
+17. What is the difference between fixed and variable cost? What is BYOL?
+18. Name two tasks only the root user can do.
+19. When would you use more than one Region?
+20. What is a shared control? Give one example.
+21. Where do you find AWS compliance reports?
+22. Budgets, Cost Explorer or Pricing Calculator: which one for an alert, past spend and an estimate?
 
 ## Quick Revision
 - Cloud: pay-as-you-go computing over the internet.
@@ -27,3 +34,9 @@ Use this file before starting Week 2. Answers are discussed in class.
 - Six pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability.
 - Root user: MFA on, no daily use, no access keys.
 - Budgets alert; they do not stop spending.
+- Elasticity: grow and shrink automatically with demand.
+- AZs do not share a single point of failure. Multiple Regions: DR, low latency, data sovereignty.
+- Shared controls: patch management, configuration management, awareness and training.
+- AWS Artifact: compliance reports such as ISO and SOC.
+
+Practise with the self-check questions in [Day 1](./day-01/README.md) and [Day 2](./day-02/README.md).

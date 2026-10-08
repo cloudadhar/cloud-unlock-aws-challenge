@@ -1,5 +1,7 @@
 # Day 1 - Six Pillars, Certifications and Careers
 
+Exam task: 1.2 (design principles of the AWS Cloud)
+
 ## The Six Pillars Of The AWS Well-Architected Framework
 
 | Pillar | Question it asks | Benefit | Example |
@@ -13,11 +15,26 @@
 
 Exam pointer: "recover from failure" = Reliability. "Reduce spend" = Cost Optimization. "Protect data" = Security.
 
+Common confusion:
+- Performance Efficiency is about using the **right** resources well (speed). Cost Optimization is about **not paying** for waste.
+- Operational Excellence is about **running and improving** the workload. Reliability is about **recovering** from failure.
+- Sustainability is about **energy and environmental impact**, often by removing idle resources.
+
 ## Certification Path
 - Foundational: **Cloud Practitioner (CLF-C02)** (our goal), AI Practitioner.
 - Associate: Solutions Architect, Developer, SysOps/CloudOps Engineer, Data Engineer.
 - Professional and Specialty: senior roles and specialisation.
 Check aws.amazon.com/certification for the current list, prices and renewal rules.
+
+## The CLF-C02 Exam At A Glance
+| Item | Detail |
+|---|---|
+| Questions | 65 (50 scored + 15 unscored; you cannot tell which) |
+| Time | 90 minutes |
+| Question types | Multiple choice (one answer) and multiple response (two or more answers) |
+| Pass mark | 700 out of 1000 (scaled score); you only need to pass overall |
+| Guessing | No penalty, so never leave a question blank |
+| Domains | Cloud Concepts 24% · Security and Compliance 30% · Cloud Technology and Services 34% · Billing, Pricing and Support 12% |
 
 ## Roles That Use AWS Skills
 Cloud Support Associate, Cloud Engineer, DevOps Engineer, Solutions Architect, Data Engineer, Security Engineer.

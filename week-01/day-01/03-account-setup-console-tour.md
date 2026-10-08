@@ -1,5 +1,7 @@
 # Day 1 - Account Setup and Console Tour
 
+Exam tasks: 3.1 (ways to access AWS), 4.3 (AWS Support plans)
+
 ## Lab 1 - Create Your AWS Account
 Please do this **before the Day 1 live class**. Verification and activation can take time. Skip if you already have an account.
 1. Open aws.amazon.com and choose Create an AWS Account.
@@ -9,7 +11,7 @@ Please do this **before the Day 1 live class**. Verification and activation can 
 5. Choose Personal, enter contact details, accept the agreement.
 6. Add a payment method. AWS uses it to verify identity. Never share the details.
 7. Verify your phone by SMS or voice.
-8. Choose the Basic support plan.
+8. Choose the Basic support plan (free). Paid plans add faster technical help; we compare them in the Finale.
 9. Wait for activation (minutes, sometimes up to 24 hours). Sign in as Root user.
 Screens and plan names can change; follow the on-screen text.
 

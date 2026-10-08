@@ -1,10 +1,25 @@
 # Day 2 - Global Infrastructure and Ways To Access AWS
 
+Exam tasks: 3.1 (ways to access and operate AWS), 3.2 (global infrastructure)
+
 ## Terms
 - **Region**: geographic area with multiple isolated locations (Mumbai `ap-south-1`).
 - **Availability Zone (AZ)**: one or more data centres in a Region with separate power and networking.
 - **Edge location**: site close to users that caches content (CloudFront).
 - **Local Zone / Wavelength Zone**: compute closer to a city / inside 5G networks.
+
+```mermaid
+flowchart LR
+    U[Students in Pune] -->|cached content| E[Edge location<br/>CloudFront]
+    E --> R
+    subgraph R[Region: Mumbai ap-south-1]
+        A1[AZ a<br/>data centres]
+        A2[AZ b<br/>data centres]
+        A3[AZ c<br/>data centres]
+    end
+```
+
+Availability Zones are physically separate, with their own power, cooling and networking, connected by fast private links. They **do not share a single point of failure**, so running in two or more AZs keeps you up if one AZ fails.
 
 Live counts are on aws.amazon.com/about-aws/global-infrastructure. Do not memorise numbers; check the live page.
 
@@ -13,6 +28,11 @@ Live counts are on aws.amazon.com/about-aws/global-infrastructure. Do not memori
 2. Latency to users
 3. Service availability
 4. Cost
+
+## When To Use More Than One Region
+- Disaster recovery and business continuity (a whole Region has a problem)
+- Low latency for users on different continents
+- Data sovereignty (each country's data stays in that country)
 
 Exam pointer: data must stay in a country = choose a Region there. Users far away = CloudFront. High availability = multiple AZs. Region-wide disaster recovery = multiple Regions.
 
@@ -27,6 +47,10 @@ Exam pointer: data must stay in a country = choose a Region there. Users far awa
 All four call the same AWS APIs underneath.
 
 Exam pointer: repeatable, automated deployments = Infrastructure as Code (CloudFormation). Access from application code = SDK.
+
+One-time or repeatable?
+- One-time task, such as exploring or checking a setting: the Console is fine.
+- Same thing many times, or in many accounts or Regions: use the CLI, scripts or IaC.
 
 ## Lab 1 - First Commands In CloudShell
 CloudShell is a browser terminal with the AWS CLI already set up. It has no extra cost.
@@ -50,7 +74,15 @@ Notes:
 - Opt-in Regions (such as Hyderabad `ap-south-2`) must be enabled before use. Do not enable them for this lab.
 - Zone names are mapped per account; zone IDs are the same for everyone.
 
+## Lab 3 - AWS Health Dashboard
+1. Search `Health` in the Console and open AWS Health Dashboard.
+2. Open **Service health** and filter by Asia Pacific (Mumbai).
+3. Open **Your account health** and check for open issues or scheduled changes.
+
+Health Dashboard shows AWS events that may affect you. It costs nothing.
+
 ## Deliverables
 - Screenshot of the Region list output
 - Screenshot of the Mumbai AZ table (account ID hidden)
 - Four-line Region choice for a fest-registration site for students in Pune
+- One line: what did the Health Dashboard show for Mumbai?
