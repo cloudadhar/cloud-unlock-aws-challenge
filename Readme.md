@@ -64,24 +64,24 @@ A new week folder is uploaded here every Saturday. Every folder has the same str
 
 ## 🗺️ Syllabus Tracker
 
-12 live sessions · 2 hours each · every Saturday and Sunday, 7:00-9:00 PM IST · mapped to the official [CLF-C02 exam guide](https://aws.amazon.com/certification/certified-cloud-practitioner/) task statements.
+12 live sessions · 2 hours each · every Saturday and Sunday, 7:00-9:00 PM IST · aligned to the official [CLF-C02 exam guide](https://aws.amazon.com/certification/certified-cloud-practitioner/).
 
 **Status:** ✅ Completed · 🔴 Next live · ⏳ Upcoming
 
-| Session | Day | Date | Topic | What we cover | Hands-on | Exam tasks | Status |
-|:-:|:-:|:-:|---|---|---|:-:|:-:|
-| **S1** | Sat | 10 Oct | [Why cloud + a safe AWS account](week-01/day-01) | Benefits of cloud, cloud economics, IaaS/PaaS/SaaS, 6 Well-Architected pillars, careers | Console tour, **root MFA**, **budget alert** | 1.1 · 1.2 · 1.4 · 2.3 · 4.2 | 🔴 |
-| **S2** | Sun | 11 Oct | [Global infrastructure + shared responsibility](week-01/day-02) | Regions, AZs, edge, 4 ways to access AWS, shared responsibility, compliance | **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | 2.1 · 2.2 · 3.1 · 3.2 | ⏳ |
-| **S3** | Sat | TBA | IAM essentials | Users, groups, policies, least privilege, MFA, password policy, access keys | IAM admin user + read-only group | 2.3 | ⏳ |
-| **S4** | Sun | TBA | Security, governance + compliance | Roles, Identity Center, Organizations, CloudTrail, Config, KMS, GuardDuty, Shield, WAF, Security Hub | Read-only security checks | 2.2 · 2.3 · 2.4 | ⏳ |
-| **S5** | Sat | TBA | Storage | S3 classes, versioning, lifecycle, Block Public Access, EBS, EFS, FSx, Storage Gateway, Backup | Private S3 bucket + version recovery | 3.6 | ⏳ |
-| **S6** | Sun | TBA | Networking + your first EC2 | VPC, subnets, security groups vs NACLs, Route 53, VPN/Direct Connect, EC2 instance types | One EC2 web server via Session Manager | 3.3 · 3.5 | ⏳ |
-| **S7** | Sat | TBA | Scaling, serverless, containers + edge | Auto Scaling, ELB, Lambda, Fargate, ECS/EKS, CloudFront | ALB health checks demo, first Lambda | 3.2 · 3.3 | ⏳ |
-| **S8** | Sun | TBA | Databases + migration | RDS, Aurora, DynamoDB, ElastiCache, DMS/SCT, AWS CAF, migration strategies | DynamoDB table with sample records | 1.3 · 3.4 | ⏳ |
-| **S9** | Sat | TBA | Analytics + AI/ML | Athena, Glue, Kinesis, Quick Sight, Redshift, SageMaker AI, Lex, Rekognition, Bedrock | Query a sample file with Athena | 3.7 | ⏳ |
-| **S10** | Sun | TBA | Integration, developer tools + operations | SQS, SNS, EventBridge, CloudWatch, X-Ray, CodePipeline, CloudFormation, Amplify, WorkSpaces | Alarm + SNS notification | 1.2 · 3.1 · 3.8 | ⏳ |
-| **S11** | Sat | TBA | Pricing + cost management | On-Demand, RI, Savings Plans, Spot, Dedicated, data transfer, Cost Explorer, Pricing Calculator, consolidated billing, tags | Cost estimate + Cost Explorer tour | 4.1 · 4.2 | ⏳ |
-| **S12** | Sun | TBA | Support, capstone + mock exam | Support plans, Trusted Advisor, re:Post, Marketplace, Partners, careers | Capstone review + full mock exam | 4.3 | ⏳ |
+| Session | Day | Date | Topic | What we cover | Hands-on | Status |
+|:-:|:-:|:-:|---|---|---|:-:|
+| **S1** | Sat | 10 Oct | [Why cloud + a safe AWS account](week-01/day-01) | Benefits of cloud, cloud economics, IaaS/PaaS/SaaS, 6 Well-Architected pillars, careers | Console tour, **root MFA**, **budget alert** | 🔴 |
+| **S2** | Sun | 11 Oct | [Global infrastructure + shared responsibility](week-01/day-02) | Regions, AZs, edge, 4 ways to access AWS, shared responsibility, compliance | **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | ⏳ |
+| **S3** | Sat | TBA | IAM essentials | Users, groups, policies, least privilege, MFA, password policy, access keys | IAM admin user + read-only group | ⏳ |
+| **S4** | Sun | TBA | Security, governance + compliance | Roles, Identity Center, Organizations, CloudTrail, Config, KMS, GuardDuty, Shield, WAF, Security Hub | Read-only security checks | ⏳ |
+| **S5** | Sat | TBA | Storage | S3 classes, versioning, lifecycle, Block Public Access, EBS, EFS, FSx, Storage Gateway, Backup | Private S3 bucket + version recovery | ⏳ |
+| **S6** | Sun | TBA | Networking + your first EC2 | VPC, subnets, security groups vs NACLs, Route 53, VPN/Direct Connect, EC2 instance types | One EC2 web server via Session Manager | ⏳ |
+| **S7** | Sat | TBA | Scaling, serverless, containers + edge | Auto Scaling, ELB, Lambda, Fargate, ECS/EKS, CloudFront | ALB health checks demo, first Lambda | ⏳ |
+| **S8** | Sun | TBA | Databases + migration | RDS, Aurora, DynamoDB, ElastiCache, DMS/SCT, AWS CAF, migration strategies | DynamoDB table with sample records | ⏳ |
+| **S9** | Sat | TBA | Analytics + AI/ML | Athena, Glue, Kinesis, Quick Sight, Redshift, SageMaker AI, Lex, Rekognition, Bedrock | Query a sample file with Athena | ⏳ |
+| **S10** | Sun | TBA | Integration, developer tools + operations | SQS, SNS, EventBridge, CloudWatch, X-Ray, CodePipeline, CloudFormation, Amplify, WorkSpaces | Alarm + SNS notification | ⏳ |
+| **S11** | Sat | TBA | Pricing + cost management | On-Demand, RI, Savings Plans, Spot, Dedicated, data transfer, Cost Explorer, Pricing Calculator, consolidated billing, tags | Cost estimate + Cost Explorer tour | ⏳ |
+| **S12** | Sun | TBA | Support, capstone + mock exam | Support plans, Trusted Advisor, re:Post, Marketplace, Partners, careers | Capstone review + full mock exam | ⏳ |
 
 > 📌 Dates after Week 1 are announced every week. Follow YouTube and the WhatsApp group for updates.
 
