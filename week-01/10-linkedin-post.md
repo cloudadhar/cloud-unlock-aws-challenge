@@ -9,17 +9,17 @@ Post progress in your own words. Do not copy-paste the same post as everyone els
 - Tag Gangadhar Ure and the AWS Student Builder Group at MIT ADT University.
 - Add the hashtags at the end.
 
-## Day 1 - Why Cloud
+## Day 1 - Why Cloud And A Safe Account
 Write about:
 - One problem the cloud solves and how
 - One Well-Architected pillar you found interesting
-- Which cloud role you are aiming for
+- Why you set up root MFA and a budget alert on day one
 
-## Day 2 - Foundations And Security
+## Day 2 - Global Infrastructure And Shared Responsibility
 Write about:
 - Region vs Availability Zone in your own words
+- Your first CloudShell command and what it showed
 - One thing AWS secures and one thing you secure
-- Why you set up root MFA and a budget alert
 
 ## Weekly Wrap-Up
 Write about:

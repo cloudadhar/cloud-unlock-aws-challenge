@@ -1,4 +1,4 @@
-# Day 2 - Global Infrastructure
+# Day 2 - Global Infrastructure and Ways To Access AWS
 
 ## Terms
 - **Region**: geographic area with multiple isolated locations (Mumbai `ap-south-1`).
@@ -16,7 +16,30 @@ Live counts are on aws.amazon.com/about-aws/global-infrastructure. Do not memori
 
 Exam pointer: data must stay in a country = choose a Region there. Users far away = CloudFront. High availability = multiple AZs. Region-wide disaster recovery = multiple Regions.
 
-## Lab - Region And AZ Explorer
+## Four Ways To Access AWS
+| Way | What it is | Example |
+|---|---|---|
+| AWS Management Console | Web browser, click to use | What you used on Day 1 |
+| AWS CLI | Commands in a terminal | `aws ec2 describe-regions` in CloudShell |
+| AWS SDKs | Call AWS from your code (Python, Java, JavaScript...) | A Python app uploading to S3 with `boto3` |
+| Infrastructure as Code | Describe resources in a file, AWS builds them | AWS CloudFormation, AWS CDK |
+
+All four call the same AWS APIs underneath.
+
+Exam pointer: repeatable, automated deployments = Infrastructure as Code (CloudFormation). Access from application code = SDK.
+
+## Lab 1 - First Commands In CloudShell
+CloudShell is a browser terminal with the AWS CLI already set up. It has no extra cost.
+Open CloudShell (terminal icon at the top of the Console) in Mumbai and run:
+
+```bash
+aws --version
+aws configure list
+```
+
+Do not post `aws sts get-caller-identity` output; it shows your account ID.
+
+## Lab 2 - Region And AZ Explorer
 ```bash
 aws ec2 describe-regions --query "Regions[].RegionName" --output text
 aws ec2 describe-regions --all-regions --query "Regions[].[RegionName,OptInStatus]" --output table
@@ -28,5 +51,6 @@ Notes:
 - Zone names are mapped per account; zone IDs are the same for everyone.
 
 ## Deliverables
+- Screenshot of the Region list output
 - Screenshot of the Mumbai AZ table (account ID hidden)
 - Four-line Region choice for a fest-registration site for students in Pune

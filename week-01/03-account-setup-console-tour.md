@@ -1,7 +1,7 @@
-# Day 1 - Account Setup, Console Tour and CloudShell
+# Day 1 - Account Setup and Console Tour
 
 ## Lab 1 - Create Your AWS Account
-Skip if you already have an account.
+Please do this **before the Day 1 live class**. Verification and activation can take time. Skip if you already have an account.
 1. Open aws.amazon.com and choose Create an AWS Account.
 2. Enter your personal email and an account name (for example `cloudadhar-learning`). Verify the email code.
 3. Create a strong, unique root password.
@@ -20,19 +20,8 @@ Screens and plan names can change; follow the on-screen text.
 4. Open Billing and Cost Management and find Free Tier or Credits.
 5. Name one service each in Compute, Storage, Database, Networking, Security.
 
-## Lab 3 - CloudShell
-Open CloudShell (terminal icon) in Mumbai and run:
-
-```bash
-aws --version
-aws configure list
-aws ec2 describe-regions --query "Regions[].RegionName" --output table
-aws ec2 describe-availability-zones --query "AvailabilityZones[].ZoneName" --output text
-```
-
-Do not post `aws sts get-caller-identity` output; it shows your account ID.
-
 ## Deliverables
 - Screenshot of Console Home with the Region visible (account ID hidden)
-- Screenshot of the Region list output
 - One sentence: what surprised you in the Console?
+
+Next: secure your account right away in [04-account-security-lab.md](./04-account-security-lab.md).

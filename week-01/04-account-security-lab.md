@@ -1,4 +1,4 @@
-# Day 2 - Account Security Lab
+# Day 1 - Account Security Lab
 
 Goal: create a safe AWS account foundation for the next five weeks.
 

@@ -10,17 +10,22 @@ This week is about basics. Before IAM, storage, or servers, first understand wha
 ## Start Here
 Go step by step. Do not finish everything in one sitting.
 - First understand these words: cloud, Region, Availability Zone, shared responsibility, root user.
-- Then create or prepare your account and tour the Console.
-- Then secure the root user and set a budget alert.
+- Create your account **before the Day 1 live class** (see below).
+- Secure the root user and set a budget alert on Day 1, before you explore anything else.
 - If the optional challenge feels hard, skip it for now.
 - Submit whatever you complete with honest notes. Do not stay silent.
+
+## Before Day 1 (Pre-work)
+Create your AWS account before Saturday's live class: follow Lab 1 in [03-account-setup-console-tour.md](./03-account-setup-console-tour.md). Card verification and activation can take time. If you get stuck, join anyway; we will help live.
+
+Keep ready: a phone with an authenticator app (Google Authenticator, Microsoft Authenticator or similar) for MFA.
 
 ## What You Should Know By The End Of The Week
 - You can explain what AWS is and five problems it solves (scaling, cost, availability, security, reliability).
 - You know the six advantages of cloud computing and the six Well-Architected pillars.
 - You know the AWS certification path and common cloud roles.
 - You can sign in, switch Regions and find your credits/Free Tier page.
-- You ran your first commands in CloudShell.
+- You know the four ways to access AWS and ran your first commands in CloudShell.
 - You know what Regions, Availability Zones and edge locations are.
 - You know what AWS secures and what you secure.
 - Your root user has MFA and you have a budget alert.
@@ -31,11 +36,11 @@ Go step by step. Do not finish everything in one sitting.
 |---:|---|---|---|
 | 01 | Sat (Day 1) | Why cloud and the problems it solves | [01-cloud-foundations.md](./01-cloud-foundations.md) |
 | 02 | Sat (Day 1) | Six pillars, certifications and careers | [02-well-architected-and-careers.md](./02-well-architected-and-careers.md) |
-| 03 | Sat (Day 1) | Create your account, tour the Console, use CloudShell | [03-account-setup-console-tour.md](./03-account-setup-console-tour.md) |
-| 04 | Sun (Day 2) | Regions, AZs and edge locations | [04-global-infrastructure.md](./04-global-infrastructure.md) |
-| 05 | Sun (Day 2) | Shared responsibility model | [05-shared-responsibility.md](./05-shared-responsibility.md) |
-| 06 | Sun (Day 2) | Root MFA and budget alert | [06-account-security-lab.md](./06-account-security-lab.md) |
-| 07 | Optional | Fest app architecture challenge | [07-optional-challenge.md](./07-optional-challenge.md) |
+| 03 | Sat (Day 1) | Create your account and tour the Console | [03-account-setup-console-tour.md](./03-account-setup-console-tour.md) |
+| 04 | Sat (Day 1) | Root MFA and budget alert | [04-account-security-lab.md](./04-account-security-lab.md) |
+| 05 | Sun (Day 2) | Regions, AZs, edge locations, ways to access AWS, CloudShell | [05-global-infrastructure.md](./05-global-infrastructure.md) |
+| 06 | Sun (Day 2) | Shared responsibility model | [06-shared-responsibility.md](./06-shared-responsibility.md) |
+| 07 | Optional | Fest app architecture and cost estimate challenge | [07-optional-challenge.md](./07-optional-challenge.md) |
 | 08 | End of week | Clean up | [08-cleanup.md](./08-cleanup.md) |
 | 09 | End of week | Submit your work | [09-submission-format.md](./09-submission-format.md) |
 | 10 | End of week | LinkedIn post | [10-linkedin-post.md](./10-linkedin-post.md) |
@@ -57,6 +62,7 @@ PDF guides: [Day 1](./pdf/Day01_Learner_Guide.pdf) | [Day 2](./pdf/Day02_Learner
 | Benefits of cloud | Domain 1 | Cost Optimization | Pay for what you use |
 | Well-Architected pillars | Domain 1 | All six | Design with the six pillars |
 | Regions and AZs | Domain 3 / 1 | Reliability | Use multiple AZs |
+| Ways to access AWS | Domain 3 | Operational Excellence | Automate with CLI and IaC |
 | Shared responsibility | Domain 2 | Security | Know AWS vs customer duties |
 | Root MFA | Domain 2 | Security | Protect the root user |
 | Budgets | Domain 4 | Cost Optimization | Monitor cost from day one |
