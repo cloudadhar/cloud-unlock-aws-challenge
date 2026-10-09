@@ -1,9 +1,9 @@
-# Optional Challenge - Design The Fest Registration App
+# Optional Challenge - Design A Sale-Day Shopping App
 
 This is optional. Do it after the core labs.
 
 ## Scenario
-Your fest website normally gets 50 visitors a day and 50,000 on registration day. Student data must stay in India.
+You run a shopping app like Flipkart, Amazon or Myntra. On a normal day it needs 2 servers. When the festive sale opens, it needs 20. Customers pay with UPI apps such as PhonePe or Google Pay. Customer data must stay in India. (Teaching numbers, not real company figures.)
 
 ## Tasks
 1. Choose a Region and give four reasons (compliance, latency, service availability, cost).

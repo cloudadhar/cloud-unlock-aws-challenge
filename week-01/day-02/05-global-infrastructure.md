@@ -10,7 +10,7 @@ Exam tasks: 3.1 (ways to access and operate AWS), 3.2 (global infrastructure)
 
 ```mermaid
 flowchart LR
-    U[Students in Pune] -->|cached content| E[Edge location<br/>CloudFront]
+    U[Shoppers in India] -->|cached content| E[Edge location<br/>CloudFront]
     E --> R
     subgraph R[Region: Mumbai ap-south-1]
         A1[AZ a<br/>data centres]
@@ -122,9 +122,9 @@ Expected result: you can write one line about what the dashboard shows for Mumba
 
 Health Dashboard shows AWS events that may affect you. It costs nothing.
 
-## Lab 4 - Choose A Region For The Fest Site
+## Lab 4 - Choose A Region For A Shopping App
 
-Scenario: a fest-registration site for students in Pune. Student data must stay in India.
+Scenario: you run a shopping app like Flipkart or Myntra for customers across India. Customer data (names, addresses, orders) must stay in India, and pages must load fast for shoppers in India.
 
 Write four lines in your `notes.md`, one for each factor:
 
@@ -141,7 +141,7 @@ Tip: check the [AWS global infrastructure map](https://aws.amazon.com/about-aws/
 ## Deliverables
 - Screenshot of the Region list output
 - Screenshot of the Mumbai AZ table (account ID hidden)
-- Four-line Region choice for a fest-registration site for students in Pune
+- Four-line Region choice for the shopping app
 - One line: what did the Health Dashboard show for Mumbai?
 
 ## If You Get Stuck

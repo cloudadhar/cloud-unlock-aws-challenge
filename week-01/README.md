@@ -35,12 +35,12 @@ Keep ready: a phone with an authenticator app (Google Authenticator, Microsoft A
 | Seq | When | Practice | File |
 |---:|---|---|---|
 | 01 | Sat (Day 1) | Why cloud and the problems it solves | [01-cloud-foundations.md](./day-01/01-cloud-foundations.md) |
-| 02 | Sat (Day 1) | Six pillars, certifications and careers | [02-well-architected-and-careers.md](./day-01/02-well-architected-and-careers.md) |
+| 02 | Sat (Day 1) | Careers, certifications, opportunities and networking | [02-well-architected-and-careers.md](./day-01/02-well-architected-and-careers.md) |
 | 03 | Sat (Day 1) | Create your account and tour the Console | [03-account-setup-console-tour.md](./day-01/03-account-setup-console-tour.md) |
 | 04 | Sat (Day 1) | Root MFA and budget alert | [04-account-security-lab.md](./day-01/04-account-security-lab.md) |
 | 05 | Sun (Day 2) | Regions, AZs, edge locations, ways to access AWS, CloudShell | [05-global-infrastructure.md](./day-02/05-global-infrastructure.md) |
 | 06 | Sun (Day 2) | Shared responsibility model | [06-shared-responsibility.md](./day-02/06-shared-responsibility.md) |
-| 07 | Optional | Fest app architecture and cost estimate challenge | [07-optional-challenge.md](./07-optional-challenge.md) |
+| 07 | Optional | Sale-day shopping app architecture and cost estimate challenge | [07-optional-challenge.md](./07-optional-challenge.md) |
 | 08 | End of week | Clean up | [08-cleanup.md](./08-cleanup.md) |
 | 09 | End of week | Submit your work | [09-submission-format.md](./09-submission-format.md) |
 | 10 | End of week | LinkedIn post | [10-linkedin-post.md](./10-linkedin-post.md) |

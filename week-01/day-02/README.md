@@ -23,7 +23,7 @@ PDF guide: [Day 2 Learner Guide](../pdf/Day02_Learner_Guide.pdf)
 
 ## Today's Deliverables
 - Screenshot of the Region list and Mumbai AZ table (account ID hidden)
-- Four-line Region choice for the fest-registration site
+- Four-line Region choice for the shopping app
 - One line on what the Health Dashboard showed for Mumbai
 - One AWS Artifact report name and who might ask for it
 - Your 12 shared responsibility card-sort answers in `notes.md`
