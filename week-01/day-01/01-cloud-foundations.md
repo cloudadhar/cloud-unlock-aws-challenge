@@ -71,3 +71,31 @@ Exam pointer:
 - Pay-as-you-go and no upfront cost point to cloud benefits.
 - Own data centre plus AWS together means hybrid.
 - You manage the OS means IaaS.
+
+## Practice - Explore The Official AWS Pages
+Practice in this order:
+
+1. Open [What is cloud computing?](https://aws.amazon.com/what-is-cloud-computing/). Find the section on benefits.
+2. Open [Types of cloud computing](https://aws.amazon.com/types-of-cloud-computing/). Find IaaS, PaaS and SaaS.
+3. Open [AWS customer stories](https://aws.amazon.com/solutions/case-studies/). Filter by one industry you like (for example Education, Media or Financial Services).
+4. Open one story. Read the headline and the results.
+
+Add to your `notes.md`:
+
+```text
+Cloud in one line (my words):
+One benefit I found on the AWS page:
+Customer story I read (company + one result it mentions):
+```
+
+Expected result: three short lines in your notes, written in your own words.
+
+## Official Links
+| Topic | Link |
+|---|---|
+| What is cloud computing | https://aws.amazon.com/what-is-cloud-computing/ |
+| Types of cloud computing (IaaS, PaaS, SaaS) | https://aws.amazon.com/types-of-cloud-computing/ |
+| Six advantages of cloud computing | https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html |
+| AWS customer stories | https://aws.amazon.com/solutions/case-studies/ |
+| AWS Pricing overview | https://aws.amazon.com/pricing/ |
+

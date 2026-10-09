@@ -41,5 +41,45 @@ Cloud Support Associate, Cloud Engineer, DevOps Engineer, Solutions Architect, D
 
 Employers look for hands-on skills plus a certification. That is why every week has a practical and a GitHub submission: it becomes your portfolio.
 
+## Lab - Explore Your Career Path
+Practice in this order:
+
+1. Open [AWS Certification](https://aws.amazon.com/certification/). Find the four levels: Foundational, Associate, Professional, Specialty.
+2. Open [AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/). Note the exam code, time and number of questions.
+3. On the same page, open the **exam guide**. Find the four domains and their weights.
+4. Open [AWS Skill Builder](https://skillbuilder.aws/). Sign up for free. Search `Cloud Practitioner` and find one free course.
+5. Open LinkedIn Jobs or Naukri. Search `AWS fresher`, location `India`.
+6. Open two job posts. Write down the skills they ask for.
+
+Add to your `notes.md`:
+
+```text
+Exam code, time, number of questions:
+Four exam domains:
+Free Skill Builder course I found:
+Job 1 skills:
+Job 2 skills:
+One skill I will build in this series:
+```
+
+Expected result: your own small career plan in `notes.md`. Do not post salary or personal details.
+
+If you get stuck, write what you completed:
+
+```text
+I found the exam details. I could not sign up for Skill Builder yet.
+```
+
 ## Reflection (add to your notes)
 Which role interests you most and why? Which pillar surprised you?
+
+## Official Links
+| Topic | Link |
+|---|---|
+| Six pillars of the Well-Architected Framework | https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html |
+| AWS Well-Architected overview | https://aws.amazon.com/architecture/well-architected/ |
+| AWS Certification (all levels) | https://aws.amazon.com/certification/ |
+| AWS Certified Cloud Practitioner (exam page and guide) | https://aws.amazon.com/certification/certified-cloud-practitioner/ |
+| AWS Skill Builder (free training) | https://skillbuilder.aws/ |
+| AWS Training and Certification | https://aws.amazon.com/training/ |
+

@@ -33,11 +33,26 @@ Exam pointer: the more managed the service (EC2 -> RDS -> Lambda), the less you 
 - AWS being compliant does **not** make your app compliant. You still configure your part.
 
 ## Lab - Find A Compliance Report In AWS Artifact
-1. Search `Artifact` in the Console and open AWS Artifact.
-2. Open **Reports** and search for `ISO` or `SOC`.
-3. Read the title and description of one report. You do not need to download or accept anything.
+
+Practice in this order:
+
+1. Read the [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/) page. Find one thing AWS does and one thing you do.
+2. Sign in to the [AWS Console](https://console.aws.amazon.com/). Region: Mumbai.
+3. Search `Artifact` and open **AWS Artifact**.
+4. Click **Reports** in the left menu.
+5. In the search box, type `ISO`. Then try `SOC`.
+6. Click one report name. Read its title and description.
+7. Do **not** download or accept any agreement. Reading is enough.
+
+Expected result: you can name one report and say who might ask for it.
 
 Deliverable: one line naming a report you found and who might ask for it (for example, a college or bank client).
+
+If you get stuck:
+
+```text
+I opened AWS Artifact but the Reports page did not load. I read the shared responsibility page instead.
+```
 
 ## Activity - Card Sort
 Write A (AWS) or C (Customer) for each. Try first, then open the answers below.
@@ -76,3 +91,12 @@ Write A (AWS) or C (Customer) for each. Try first, then open the answers below.
 </details>
 
 Deliverable: your 12 answers in `notes.md`, with one line on any you got wrong and why.
+
+## Official Links
+| Topic | Link |
+|---|---|
+| Shared responsibility model | https://aws.amazon.com/compliance/shared-responsibility-model/ |
+| AWS Artifact | https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html |
+| AWS compliance programs | https://aws.amazon.com/compliance/programs/ |
+| AWS Cloud security | https://aws.amazon.com/security/ |
+

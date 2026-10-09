@@ -2,5 +2,8 @@
 *.xlsx
 cloud-practitioner-02.pdf
 
+# Trainer-only notes and transcripts
+trainer/
+
 # macOS
 .DS_Store

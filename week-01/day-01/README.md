@@ -31,6 +31,7 @@ PDF guide: [Day 1 Learner Guide](../pdf/Day01_Learner_Guide.pdf)
 - Screenshot showing root MFA assigned (no QR, no codes)
 - Screenshot of the budget list
 - Account security checklist ticked in `notes.md`
+- Career path notes in `notes.md` (exam details, job skills) from [02-well-architected-and-careers.md](./02-well-architected-and-careers.md)
 - Day 1 LinkedIn post: see [10-linkedin-post.md](../10-linkedin-post.md)
 
 ## Self-Check: Exam-Style Questions
