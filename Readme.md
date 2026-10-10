@@ -42,7 +42,15 @@
 
 Learn AWS **from zero**, practise every week, share your progress, and get ready for the **AWS Certified Cloud Practitioner (CLF-C02)** exam. No cloud experience needed.
 
-> 👨‍🏫 **Trainer:** Gangadhar Ure, Cloud Professional & AWS Solutions Architect
+## 🎙️ Featured Speaker
+
+| | |
+|---|---|
+| **Gangadhar Ure** | Cloud Professional & AWS Solutions Architect |
+| Experience | 12+ years of industry experience |
+| Connect | [LinkedIn](https://www.linkedin.com/in/gangadharure/) · [YouTube @CloudAdhar](https://www.youtube.com/@cloudadhar) · [Instagram @cloudadhar](https://www.instagram.com/cloudadhar/) |
+
+Every session ends with a **live Q&A**. Industry expert guest sessions are announced on YouTube and in the WhatsApp group.
 
 | ☁️ Real-world AWS use cases | 🏗️ Architectures | 🛠️ Practical guidance | 🎓 Certification path | 💼 Cloud careers |
 |:-:|:-:|:-:|:-:|:-:|

@@ -17,6 +17,8 @@ Pre-work: create your AWS account before the class (Lab 1 in [03-account-setup-c
 | 03 | Create your account and tour the Console | [03-account-setup-console-tour.md](./03-account-setup-console-tour.md) |
 | 04 | Root MFA and budget alert | [04-account-security-lab.md](./04-account-security-lab.md) |
 
+**Live class:** keep [practical-steps.md](./practical-steps.md) open and tick each step with the trainer.
+
 PDF guide: [Day 1 Learner Guide](../pdf/Day01_Learner_Guide.pdf)
 
 ## By The End Of Today

@@ -13,6 +13,8 @@ Before class: make sure root MFA and your budget alert from [Day 1](../day-01/04
 | 05 | Regions, AZs, edge locations, ways to access AWS, CloudShell, Health Dashboard | [05-global-infrastructure.md](./05-global-infrastructure.md) |
 | 06 | Shared responsibility model and compliance (AWS Artifact) | [06-shared-responsibility.md](./06-shared-responsibility.md) |
 
+**Live class:** keep [practical-steps.md](./practical-steps.md) open and tick each step with the trainer.
+
 PDF guide: [Day 2 Learner Guide](../pdf/Day02_Learner_Guide.pdf)
 
 ## By The End Of Today
