@@ -78,9 +78,9 @@ A new week folder is uploaded here every Saturday. Every folder has the same str
 
 | Session | Day | Date | Topic | What we cover | Real-life example | Hands-on | Status |
 |:-:|:-:|:-:|---|---|---|---|:-:|
-| **S1** | Sat | 10 Oct | [Cloud Unlock kickoff: careers, certifications + a safe AWS account](week-01/day-01) | What is cloud, ☁️ cloud careers and jobs, 🏆 AWS certification path, 💼 opportunities, 🤝 networking, 🚀 learning and projects, 🎙️ live Q&A | 🛒 Amazon Great Indian Festival night: refresh, Add to Cart, pay, My Orders | Console tour, **root MFA**, **budget alert** | 🔴 |
-| **S2** | Sun | 11 Oct | [Global infrastructure + shared responsibility](week-01/day-02) | Regions, AZs, edge, 4 ways to access AWS, shared responsibility, compliance | 🏏 IPL final streaming fast on your phone; a shopping app keeping data in India | **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | ⏳ |
-| **S3** | Sat | TBA | IAM essentials | Users, groups, policies, least privilege, MFA, password policy, access keys | 🎓 College ERP: students, faculty and admin see different things | IAM admin user + read-only group | ⏳ |
+| **S1** | Sat | 10 Oct | [Cloud Unlock kickoff: careers, certifications + a safe AWS account](week-01/day-01) | What is cloud, ☁️ cloud careers and jobs, 🏆 AWS certification path, 💼 opportunities, 🤝 networking, 🚀 learning and projects, 🎙️ live Q&A | 🛒 Amazon Great Indian Festival night: refresh, Add to Cart, pay, My Orders | Console tour, **root MFA**, **IAM admin user** | ✅ |
+| **S2** | Sun | 11 Oct | [Global infrastructure + shared responsibility](week-01/day-02) | Regions, AZs, edge, 4 ways to access AWS, shared responsibility, compliance | 🏏 IPL final streaming fast on your phone; a shopping app keeping data in India | **Budget alert**, **IAM admin group**, **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | 🔴 |
+| **S3** | Sat | TBA | IAM roles, policies + least privilege | Users, groups, policies, least privilege, MFA, password policy, access keys | 🎓 College ERP: students, faculty and admin see different things | Read-only group, custom policy, switch role | ⏳ |
 | **S4** | Sun | TBA | Security, governance + compliance | Roles, Identity Center, Organizations, CloudTrail, Config, KMS, GuardDuty, Shield, WAF, Security Hub | 🔔 Instagram "new login, was this you?" alert | Read-only security checks | ⏳ |
 | **S5** | Sat | TBA | Storage | S3 classes, versioning, lifecycle, Block Public Access, EBS, EFS, FSx, Storage Gateway, Backup | 📸 Instagram / Google Photos photos and Google Docs version history | Private S3 bucket + version recovery | ⏳ |
 | **S6** | Sun | TBA | Networking + your first EC2 | VPC, subnets, security groups vs NACLs, Route 53, VPN/Direct Connect, EC2 instance types | 🏫 College campus: gates, guards, open library, staff-only rooms | One EC2 web server via Session Manager | ⏳ |
@@ -124,7 +124,7 @@ Exam: 65 questions (50 scored + 15 unscored), 90 minutes, pass mark 700/1000, no
 | 1.4 | Cloud economics: fixed vs variable cost, BYOL, rightsizing, economies of scale | S1, S11 | ⬜ |
 | 2.1 | Shared responsibility model | S2 | ⬜ |
 | 2.2 | Security, governance, compliance (Artifact, CloudTrail, Config, encryption) | S2, S4 | ⬜ |
-| 2.3 | Access management (IAM, root user, MFA, Identity Center, least privilege) | S1, S3, S4 | ⬜ |
+| 2.3 | Access management (IAM, root user, MFA, Identity Center, least privilege) | S1, S2, S3, S4 | ⬜ |
 | 2.4 | Security services and resources (WAF, Shield, GuardDuty, Trusted Advisor) | S4 | ⬜ |
 | 3.1 | Ways to deploy and operate (Console, CLI, SDK, IaC; deployment models) | S2, S10 | ⬜ |
 | 3.2 | Global infrastructure (Regions, AZs, edge locations) | S2, S7 | ⬜ |
@@ -135,7 +135,7 @@ Exam: 65 questions (50 scored + 15 unscored), 90 minutes, pass mark 700/1000, no
 | 3.7 | AI/ML and analytics services | S9 | ⬜ |
 | 3.8 | Integration, business apps, developer tools, end-user computing, IoT | S10 | ⬜ |
 | 4.1 | Pricing models (On-Demand, RI, Savings Plans, Spot, data transfer) | S11 | ⬜ |
-| 4.2 | Billing and cost tools (Budgets, Cost Explorer, Pricing Calculator, tags) | S1, S11 | ⬜ |
+| 4.2 | Billing and cost tools (Budgets, Cost Explorer, Pricing Calculator, tags) | S1, S2, S11 | ⬜ |
 | 4.3 | Support plans and technical resources | S12 | ⬜ |
 
 </details>

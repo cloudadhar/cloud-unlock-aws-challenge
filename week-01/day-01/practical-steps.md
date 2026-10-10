@@ -57,24 +57,23 @@ Screenshot: `root-mfa.png` (MFA device listed; no QR, no codes, account ID hidde
 
 ---
 
-## Practical 3 - Budget Alert (8:35)
+## Practical 3 - Create An IAM Admin User (8:35)
 
-Create: budget `cloud-unlock-learning-budget`
+Create: IAM user `Cloud-Unlock` with `AdministratorAccess`
 
-- [ ] 1. Search `Budgets`. Open **Billing and Cost Management** → **Budgets**.
-- [ ] 2. **Create budget**.
-- [ ] 3. **Use a template (simplified)**.
-- [ ] 4. **Zero spend budget**, or **Monthly cost budget** with amount `5` USD.
-- [ ] 5. Budget name: `cloud-unlock-learning-budget`.
-- [ ] 6. Email recipients: your email.
-- [ ] 7. **Create budget**.
-- [ ] 8. Check `cloud-unlock-learning-budget` is in the Budgets list.
+- [ ] 1. Search `IAM`, open it. Left menu: **Users** → **Create user**.
+- [ ] 2. User name: `Cloud-Unlock`.
+- [ ] 3. Tick **Provide user access to the AWS Management Console**. If asked, choose **I want to create an IAM user**.
+- [ ] 4. **Custom password**: strong, not used anywhere else.
+- [ ] 5. **Next** → **Attach policies directly** → tick `AdministratorAccess`.
+- [ ] 6. **Next** → **Create user**.
+- [ ] 7. Save the **Console sign-in URL** in your notes. It contains your account ID: never share it.
 
-Type **BUDGET** in chat when done.
+Type **IAM** in chat when the user is created.
 
-Remember: a budget **alerts** you. It does **not** stop spending.
+Screenshot: `iam-user.png` (IAM user list, account ID hidden).
 
-Screenshot: `budget-alert.png` (the budget list).
+Budget alert and the IAM group come first thing on **Day 2**.
 
 ---
 
@@ -84,7 +83,7 @@ Screenshot: `budget-alert.png` (the budget list).
 |---|---|
 | Account still "pending activation" | Normal, can take up to 24 hours. Watch now, finish later. |
 | MFA says "codes not valid" | Set your phone time to automatic. Use two **different** codes. |
-| Budgets shows a permission error | Sign in as the root user for this lab. |
+| "User name already exists" | Pick another name, for example `Cloud-Unlock-2`. |
 | Wrong Region on screen | Top right → choose Mumbai again. |
 
 Type **STUCK** in chat with one line about the problem. The trainer helps after the class.
@@ -93,7 +92,7 @@ Type **STUCK** in chat with one line about the problem. The trainer helps after 
 
 ## After Class
 
-- [ ] 3 screenshots saved: `console-region.png`, `root-mfa.png`, `budget-alert.png`
+- [ ] 3 screenshots saved: `console-region.png`, `root-mfa.png`, `iam-user.png`
 - [ ] Career notes in `notes.md` ([02-well-architected-and-careers.md](./02-well-architected-and-careers.md))
 - [ ] Connected with 3 classmates on LinkedIn
 - [ ] LinkedIn post with `#CloudUnlock` ([10-linkedin-post.md](../10-linkedin-post.md))
