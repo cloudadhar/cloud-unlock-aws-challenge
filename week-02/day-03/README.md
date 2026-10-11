@@ -1,4 +1,4 @@
-# Week 2 - Day 3: Ways To Access AWS, CloudShell + Shared Responsibility
+# Week 2 - Day 3: Ways To Access AWS, AWS CLI In CloudShell + Shared Responsibility
 
 Live class: Saturday (date TBA), 7:00-9:00 PM IST
 Exam focus: Domain 2 (Security and Compliance), Domain 3 (Technology)
@@ -12,14 +12,16 @@ Regions, Availability Zones and edge locations were taught on Day 1. Today we re
 
 | Seq | Practice | File |
 |---:|---|---|
-| 01 | Revise Regions, AZs, edge locations · 4 ways to access AWS · CloudShell · Health Dashboard | [01-cloudshell-and-global-infrastructure.md](./01-cloudshell-and-global-infrastructure.md) |
+| 01 | Revise Regions, AZs, edge locations · 4 ways to access AWS · AWS CLI in CloudShell · Health Dashboard | [01-cloudshell-and-global-infrastructure.md](./01-cloudshell-and-global-infrastructure.md) |
 | 02 | Shared responsibility model and compliance (AWS Artifact) | [02-shared-responsibility.md](./02-shared-responsibility.md) |
 
 **Live class:** keep [practical-steps.md](./practical-steps.md) open and tick each step with the trainer.
 
+Reference PDF (services, key ideas, official links): [Day 3 Reference Guide](../pdf/Day03_Reference_Guide.pdf). The steps are in the files above.
+
 ## By The End Of Today
 - You can explain Regions, Availability Zones and edge locations, how to choose a Region, and when to use more than one.
-- You know the four ways to access AWS and ran your first commands in CloudShell.
+- You know the four ways to access AWS, what `aws configure` needs, and ran AWS CLI commands in CloudShell (IAM lists, an S3 bucket).
 - You know what AWS secures, what you secure, and what is shared.
 - You know where to find AWS compliance reports (AWS Artifact).
 

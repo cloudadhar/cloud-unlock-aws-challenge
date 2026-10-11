@@ -11,6 +11,8 @@ From this week, do every practical as the IAM user `Cloud-Unlock`, not root.
 | Day 3 (Sat) | Ways to access AWS, CloudShell, Health Dashboard, shared responsibility, AWS Artifact | [day-03](./day-03/README.md) |
 | Day 4 (Sun) | Security, governance and compliance | Coming soon |
 
+Reference PDF: [Day 3](./pdf/Day03_Reference_Guide.pdf) (services, key ideas, official links; steps are in the READMEs).
+
 <div align="center">
 
 [Home](../Readme.md) | [Week 1](../week-01/README.md)

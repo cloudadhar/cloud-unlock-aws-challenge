@@ -19,7 +19,7 @@ Pre-work: create your AWS account before the class (Lab 1 in [03-account-setup-c
 
 **Live class:** keep [practical-steps.md](./practical-steps.md) open and tick each step with the trainer.
 
-PDF guide: [Day 1 Learner Guide](../pdf/Day01_Learner_Guide.pdf)
+Reference PDF (services, key ideas, official links): [Day 1 Reference Guide](../pdf/Day01_Reference_Guide.pdf). The steps are in the files above.
 
 ## By The End Of Today
 - You can explain cloud computing using one Amazon festival sale night: scalability, elasticity, high availability, reliability, security and pay-per-use.

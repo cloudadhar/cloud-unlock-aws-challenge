@@ -6,9 +6,8 @@ Cleanup protects you from surprise bills.
 Week 1 creates no billable resources. Nothing to delete except anything you launched by mistake.
 
 ## Delete At The End Of The Week
-- IAM users `Cloud-Unlock-RUser`, `Cloud-Unlock-WUser`
-- Groups `S3ReadOnlyGroup`, `S3FullAccessGroup`
-- Policy `CustomEC2DescribeOnly`
+- IAM users `Cloud-Unlock-S3`, `Cloud-Unlock-EC2`, `Cloud-Unlock-Billing`
+- Groups `S3ReadOnlyGroup`, `EC2ReadOnlyGroup`, `BillingViewGroup`
 - Role `TrainingReadOnlyRole`
 
 ## Keep These Enabled

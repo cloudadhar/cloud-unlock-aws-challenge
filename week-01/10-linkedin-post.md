@@ -18,7 +18,7 @@ Write about:
 ## Day 2 - Budget Alert + IAM
 Write about:
 - Why permissions go on a group, not a user
-- What happened when `Cloud-Unlock-RUser` tried to create a bucket
+- What `Cloud-Unlock-S3`, `Cloud-Unlock-EC2` and `Cloud-Unlock-Billing` could and could not do
 - User vs role in your own words
 
 ## Weekly Wrap-Up

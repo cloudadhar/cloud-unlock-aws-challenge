@@ -1,38 +1,38 @@
-# Week 1 - Day 2: Budget Alert + IAM Users, Groups, Policies, Roles + AWS CLI
+# Week 1 - Day 2: Budget Alert + IAM Users, Groups, Policies And Roles
 
 Live class: Sunday 11 Oct 2026, 7:00-9:00 PM IST
 Exam focus: Domain 2 (Security and Compliance), Domain 4 (Billing)
-Exam tasks: 2.3 · 3.1 · 4.2
+Exam tasks: 2.3 · 4.2
 
 Before class: root MFA and the IAM user `Cloud-Unlock` from [Day 1](../day-01/04-account-security-lab.md) are done. If you got stuck, bring a screenshot and we will help.
 
-Regions, Availability Zones and edge locations were taught on Day 1. Shared responsibility comes on [Day 3](../../week-02/day-03/README.md).
+Regions, Availability Zones and edge locations were taught on Day 1. The AWS CLI and shared responsibility come on [Day 3](../../week-02/day-03/README.md).
 
 ## Practice Sequence
 
 | Seq | Practice | File |
 |---:|---|---|
 | 04 | Budget alert, `AdminGroup`, MFA on `Cloud-Unlock`, sign in as `Cloud-Unlock` | [04-account-security-lab.md](../day-01/04-account-security-lab.md) (Labs 2 and 4) |
-| 05 | IAM basics: users, groups, policies, roles, least privilege | [05-iam-basics.md](./05-iam-basics.md) |
-| 06 | IAM hands-on: read-only groups, allowed vs denied, AWS CLI in CloudShell, custom policy, switch role | [06-iam-hands-on-lab.md](./06-iam-hands-on-lab.md) |
+| 05 | Key ideas: IAM users, groups, policies, roles, least privilege, Budgets | [05-iam-basics.md](./05-iam-basics.md) |
+| 06 | IAM hands-on: S3, EC2 and billing read-only users, allowed vs denied, read a policy (switch role optional) | [06-iam-hands-on-lab.md](./06-iam-hands-on-lab.md) |
 
 **Live class:** keep [practical-steps.md](./practical-steps.md) open and tick each step with the trainer.
+
+Reference PDF (services, key ideas, official links): [Day 2 Reference Guide](../pdf/Day02_Reference_Guide.pdf). The steps are in the files above.
 
 ## By The End Of Today
 - You have a budget alert and know that budgets alert, they do not stop spending.
 - Your admin access comes from `AdminGroup`, your IAM user has MFA, and you work as `Cloud-Unlock` (not root).
 - You can explain IAM users, groups, policies and roles in one line each.
 - You can read a simple IAM policy: `Effect`, `Action`, `Resource`.
-- You practised least privilege: one allowed action and one `Access Denied`.
-- You switched into a read-only role and back.
-- You ran AWS CLI commands in CloudShell (no access keys) and created and deleted an S3 bucket.
+- You practised least privilege with three users (S3, EC2, billing): what each can and cannot do.
+- You know when to use a role (temporary access; an app on EC2 uses a role, not access keys) and the three policy types.
 
 ## Today's Deliverables
 - Screenshot of the budget list
 - Screenshot of `AdminGroup` with `Cloud-Unlock` (account ID hidden)
 - Screenshot of one allowed action and one `Access Denied`
-- `custom-ec2-describe-only.json` in `code-or-policies/`
-- Screenshot of your CLI output (masked ARN and IAM lists)
+- `notes.md`: one line per policy (S3, EC2, billing)
 - Day 2 LinkedIn post with `#CloudUnlock`: see [10-linkedin-post.md](../10-linkedin-post.md)
 
 ## Self-Check: Exam-Style Questions

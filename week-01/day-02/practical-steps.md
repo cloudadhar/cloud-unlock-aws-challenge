@@ -14,9 +14,9 @@ Never show your account ID, access keys, OTP or MFA QR code.
 
 ---
 
-## Practical A - Budget Alert (7:05)
+## Practical A - Budget Alert + Billing Access (7:08)
 
-Create: budget `cloud-unlock-learning-budget` (as root)
+Create: budget `cloud-unlock-learning-budget`, and turn on IAM access to billing (as root)
 
 - [ ] 1. Search `Budgets`. Open **Billing and Cost Management** → **Budgets**.
 - [ ] 2. **Create budget** → **Use a template (simplified)**.
@@ -24,6 +24,7 @@ Create: budget `cloud-unlock-learning-budget` (as root)
 - [ ] 4. Budget name: `cloud-unlock-learning-budget`.
 - [ ] 5. Email recipients: your email.
 - [ ] 6. **Create budget**. Check it is in the Budgets list.
+- [ ] 7. Account name (top right) → **Account** → **IAM user and role access to Billing information** → **Edit** → tick **Activate IAM Access** → **Update**. (Needed for the billing user later.)
 
 Type **BUDGET** in chat. Remember: a budget **alerts**, it does **not** stop spending.
 
@@ -31,7 +32,7 @@ Screenshot: `budget-alert.png`.
 
 ---
 
-## Practical B - AdminGroup, MFA And Sign In As Cloud-Unlock (7:15)
+## Practical B - AdminGroup, MFA And Sign In As Cloud-Unlock (7:20)
 
 Create: group `AdminGroup`, MFA device `iam-admin-mfa-phone` (as root)
 
@@ -50,29 +51,16 @@ Screenshot: `iam-group.png`.
 
 ---
 
-## Practical 1 - Read User And Write User (7:45)
+## Practical 1 - S3 Read-Only User (7:55, everyone)
 
-Create (as `Cloud-Unlock`):
-
-| Group | Policy | User |
-|---|---|---|
-| `S3ReadOnlyGroup` | `AmazonS3ReadOnlyAccess` | `Cloud-Unlock-RUser` |
-| `S3FullAccessGroup` | `AmazonS3FullAccess` | `Cloud-Unlock-WUser` |
+Create (as `Cloud-Unlock`): group `S3ReadOnlyGroup` + policy `AmazonS3ReadOnlyAccess` + user `Cloud-Unlock-S3`
 
 - [ ] 1. **IAM → User groups → Create group** → `S3ReadOnlyGroup` → attach `AmazonS3ReadOnlyAccess` → **Create user group**.
-- [ ] 2. **IAM → Users → Create user** → `Cloud-Unlock-RUser` → console access → **Custom password** → **Next**.
+- [ ] 2. **IAM → Users → Create user** → `Cloud-Unlock-S3` → console access → **Custom password** → **Next**.
 - [ ] 3. **Add user to group** → `S3ReadOnlyGroup` → **Next** → **Create user**.
-- [ ] 4. Repeat for `S3FullAccessGroup` / `AmazonS3FullAccess` / `Cloud-Unlock-WUser`.
-
----
-
-## Practical 2 - Test Allowed vs Denied (8:00)
-
-- [ ] 1. Incognito window → alias sign-in URL → sign in as `Cloud-Unlock-RUser`.
-- [ ] 2. Open **S3**: the list opens (**allowed**).
-- [ ] 3. **Create bucket** → try to create → **Access Denied**.
-- [ ] 4. Sign out. Sign in as `Cloud-Unlock-WUser` → **Create bucket** `cloud-unlock-<yourname>-wuser-test` → it **works** (allowed).
-- [ ] 5. Delete that bucket now (select → **Delete** → type the name).
+- [ ] 4. Incognito window → alias sign-in URL → sign in as `Cloud-Unlock-S3`.
+- [ ] 5. Open **S3**: the list opens (**allowed**).
+- [ ] 6. **Create bucket** → try → **Access Denied**.
 
 Type **DENIED** in chat when you see the error.
 
@@ -80,88 +68,41 @@ Screenshots: `iam-allowed.png`, `iam-denied.png`.
 
 ---
 
-## Practical 3 - AWS CLI In CloudShell (8:10)
+## Practical 2 - EC2 Read-Only User (8:10)
 
-No access keys needed: CloudShell uses the user you are signed in with (`Cloud-Unlock`). On your own laptop, `aws configure` asks for an access key; never share it or put it on GitHub.
+Create: group `EC2ReadOnlyGroup` + policy `AmazonEC2ReadOnlyAccess` + user `Cloud-Unlock-EC2`
 
-- [ ] 1. Region **Mumbai** → click the **CloudShell** icon `>_` next to the search bar. Wait for it to load.
-- [ ] 2. Who am I? (the account ID is hidden with `sed`)
+- [ ] 1. Same steps as Practical 1, with the EC2 names above.
+- [ ] 2. Sign in as `Cloud-Unlock-EC2` → **EC2** dashboard opens (**allowed**).
+- [ ] 3. **Launch instance** → keep defaults → launch → fails (**denied**). Nothing is created.
 
-```bash
-aws --version
-aws sts get-caller-identity --query Arn --output text | sed -E 's/[0-9]{12}/XXXXXXXXXXXX/'
-```
-
-Expected: `arn:aws:iam::XXXXXXXXXXXX:user/Cloud-Unlock`
-
-- [ ] 3. See today's IAM work:
-
-```bash
-aws iam list-users --query "Users[].UserName" --output table
-aws iam list-groups --query "Groups[].GroupName" --output table
-aws iam list-attached-group-policies --group-name AdminGroup --output table
-aws iam list-attached-user-policies --user-name Cloud-Unlock
-```
-
-Expected: the last command shows an **empty** list. `Cloud-Unlock` gets admin access from `AdminGroup`.
-
-- [ ] 4. Regions and AZs (Day 1 revision):
-
-```bash
-aws ec2 describe-availability-zones --region ap-south-1 --query "AvailabilityZones[].[ZoneName,ZoneId]" --output table
-```
-
-- [ ] 5. S3 from the CLI (replace `<yourname>`; bucket names are unique worldwide):
-
-```bash
-aws s3 mb s3://cloud-unlock-<yourname>-cli-demo --region ap-south-1
-echo "Hello from Cloud Unlock" > hello.txt
-aws s3 cp hello.txt s3://cloud-unlock-<yourname>-cli-demo/
-aws s3 ls s3://cloud-unlock-<yourname>-cli-demo/
-```
-
-- [ ] 6. Open **S3** in the Console: the same bucket and file are there.
-- [ ] 7. Clean up now:
-
-```bash
-aws s3 rb s3://cloud-unlock-<yourname>-cli-demo --force
-```
-
-Type **CLI** in chat when your bucket is created and deleted.
-
-Screenshot: `cli-output.png` (masked ARN and IAM lists).
+If you are behind, watch the trainer and do this at home.
 
 ---
 
-## Practical 4 - Custom Policy And Switch Role (8:30, quick)
+## Practical 3 - Billing Read-Only User (8:20)
 
-Back in the normal window as `Cloud-Unlock`:
+Create: group `BillingViewGroup` + policy `AWSBillingReadOnlyAccess` + user `Cloud-Unlock-Billing`
 
-- [ ] 1. **IAM → Policies → Create policy → JSON** → paste:
+- [ ] 1. Same steps as Practical 1, with the billing names above.
+- [ ] 2. Sign in as `Cloud-Unlock-Billing` → **Billing and Cost Management** opens (**allowed**).
+- [ ] 3. Open **S3** or **EC2** → not authorized (**denied**).
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    { "Effect": "Allow", "Action": ["ec2:Describe*"], "Resource": "*" }
-  ]
-}
-```
-
-- [ ] 2. **Next** → name `CustomEC2DescribeOnly` → **Create policy**.
-- [ ] 3. **IAM → Roles → Create role** → **AWS account** → **This account** → **Next**.
-- [ ] 4. Tick `ReadOnlyAccess` → **Next** → name `TrainingReadOnlyRole` → **Create role**.
-- [ ] 5. Top right account menu → **Switch role** → account: your alias → role: `TrainingReadOnlyRole` → **Switch role**.
-- [ ] 6. Try to create anything: denied (read-only).
-- [ ] 7. Account menu → **Switch back**.
-
-Type **ROLE** in chat when you switched.
+If Billing says access denied, step 7 of Practical A (root) was not done.
 
 ---
 
-## Homework - Password Policy
+## Trainer Demo - Switch Role (8:30, watch)
 
-- [ ] **IAM → Account settings → Password policy → Edit** → **Custom** → minimum length `12`, require a number and a symbol → **Save changes**.
+The trainer switches into a read-only role `TrainingReadOnlyRole`. Same person, different hat. Try it at home: Lab 5 in [06-iam-hands-on-lab.md](./06-iam-hands-on-lab.md).
+
+---
+
+## Homework
+
+- [ ] Lab 4: open the three policies' **JSON** tabs and write one line each in `notes.md`.
+- [ ] Lab 6: password policy (**IAM → Account settings → Password policy → Edit** → length 12, number, symbol).
+- [ ] Optional: Lab 5, switch role.
 
 ---
 
@@ -171,11 +112,9 @@ Type **ROLE** in chat when you switched.
 |---|---|
 | Budgets page shows an error | Create the budget as root. |
 | Alias name already taken | Add your name or a number. |
-| Switch role says "invalid information" | Check the alias and the exact role name `TrainingReadOnlyRole`. |
-| `Cloud-Unlock-RUser` can do everything | Make sure it is only in `S3ReadOnlyGroup`. |
+| A test user can do everything | It must be only in its own group. |
+| Billing user sees access denied on Billing | Root must activate IAM access to Billing (Practical A step 7). |
 | MFA "codes not valid" | Set phone time to automatic; two **different** codes. |
-| CloudShell keeps loading | Wait 1-2 minutes, refresh, Region = Mumbai. |
-| `BucketAlreadyExists` | Bucket names are unique worldwide: add a number. |
 
 Type **STUCK** in chat with one line about the problem.
 
@@ -183,12 +122,10 @@ Type **STUCK** in chat with one line about the problem.
 
 ## After Class
 
-- [ ] Screenshots: `budget-alert.png`, `iam-group.png`, `iam-allowed.png`, `iam-denied.png`, `cli-output.png`
-- [ ] Password policy set (homework above)
-- [ ] `custom-ec2-describe-only.json` saved in `code-or-policies/`
+- [ ] Screenshots: `budget-alert.png`, `iam-group.png`, `iam-allowed.png`, `iam-denied.png`
 - [ ] Week 1 submission PR ([09-submission-format.md](../09-submission-format.md))
 - [ ] LinkedIn post with `#CloudUnlock`
-- [ ] End of week: delete `Cloud-Unlock-RUser`, `Cloud-Unlock-WUser`, the two S3 groups, `CustomEC2DescribeOnly`, `TrainingReadOnlyRole`, any `cli-demo` bucket. Keep `Cloud-Unlock` and `AdminGroup`.
+- [ ] End of week: delete `Cloud-Unlock-S3`, `Cloud-Unlock-EC2`, `Cloud-Unlock-Billing`, their three groups and `TrainingReadOnlyRole`. Keep `Cloud-Unlock` and `AdminGroup`.
 
 <div align="center">
 

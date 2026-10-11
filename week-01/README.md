@@ -47,14 +47,13 @@ Keep ready: a phone with an authenticator app (Google Authenticator, Microsoft A
 
 Day guides: [Day 1 (Sat)](./day-01/README.md) | [Day 2 (Sun)](./day-02/README.md)
 
-PDF guides: [Day 1](./pdf/Day01_Learner_Guide.pdf) | [Day 2](./pdf/Day02_Learner_Guide.pdf)
+Reference PDFs (services, key ideas, official links; steps are in the READMEs): [Day 1](./pdf/Day01_Reference_Guide.pdf) | [Day 2](./pdf/Day02_Reference_Guide.pdf)
 
 ## Minimum Submission For Week 1
 - Root MFA proof (no QR code)
 - Budget alert proof
 - IAM user and IAM group proof (account ID hidden)
 - One allowed and one `Access Denied` screenshot
-- Your custom policy JSON
 - One short note on what you understood and where you got stuck
 - LinkedIn post link
 

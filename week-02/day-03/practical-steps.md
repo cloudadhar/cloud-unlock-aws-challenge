@@ -13,7 +13,7 @@ Never run or post `aws sts get-caller-identity`; it shows your account ID. Do no
 
 ---
 
-## Practical 1 - CloudShell Region And AZ Explorer (7:40)
+## Practical 1 - AWS CLI In CloudShell + Region And AZ Explorer (7:40)
 
 - [ ] 1. Click the **CloudShell** icon `>_` next to the search bar (or search `CloudShell`). Wait for it to load.
 - [ ] 2. Check the CLI:
@@ -24,6 +24,26 @@ aws configure list
 ```
 
 Expected: a version like `aws-cli/2.x.x`. No access keys were typed.
+
+- [ ] 2b. Who am I (account ID hidden), and your Day 2 IAM work:
+
+```bash
+aws sts get-caller-identity --query Arn --output text | sed -E 's/[0-9]{12}/XXXXXXXXXXXX/'
+aws iam list-users --query "Users[].UserName" --output table
+aws iam list-attached-user-policies --user-name Cloud-Unlock
+```
+
+- [ ] 2c. S3 from the CLI (replace `<yourname>`), then delete it:
+
+```bash
+aws s3 mb s3://cloud-unlock-<yourname>-cli-demo --region ap-south-1
+echo "Hello from Cloud Unlock" > hello.txt
+aws s3 cp hello.txt s3://cloud-unlock-<yourname>-cli-demo/
+aws s3 ls s3://cloud-unlock-<yourname>-cli-demo/
+aws s3 rb s3://cloud-unlock-<yourname>-cli-demo --force
+```
+
+Type **CLI** in chat when your bucket is created and deleted.
 
 - [ ] 3. List Regions:
 
@@ -97,6 +117,7 @@ My Region choice:
 |---|---|
 | CloudShell keeps loading | Wait 1-2 minutes, refresh. Check the Region is Mumbai. |
 | `aws configure list` shows no keys | That is normal in CloudShell. |
+| `BucketAlreadyExists` | Bucket names are unique worldwide: add a number. |
 | Your `ap-south-1a` differs from a friend's | Compare the **ZoneId** column instead. |
 | `UnauthorizedOperation` error | Check `Cloud-Unlock` is in group `AdminGroup`, sign out and in again. |
 | Artifact asks you to accept terms | Do not accept. Reading the list is enough. |

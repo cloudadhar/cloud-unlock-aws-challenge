@@ -52,17 +52,24 @@ One-time or repeatable?
 - One-time task, such as exploring or checking a setting: the Console is fine.
 - Same thing many times, or in many accounts or Regions: use the CLI, scripts or IaC.
 
+## The AWS CLI And Access Keys
+- On your own laptop, `aws configure` asks for an **access key ID**, **secret access key**, **default Region** and **output format**.
+- Access keys are for the CLI and code only. Never share them, never put them on GitHub, never create them for root.
+- **AWS CloudShell** is a terminal in the browser with the CLI already installed. It uses the user you are signed in with, so **no access keys** are needed.
+- `aws sts get-caller-identity` shows who you are signed in as. Its output contains your account ID, so never share it unmasked.
+
 ## Practice Rule
 
-Use the Mumbai Region (`ap-south-1`). These labs only **read** information. They create nothing and cost nothing.
+Use the Mumbai Region (`ap-south-1`). Sign in as `Cloud-Unlock`. Most labs only **read** information; Lab 1B creates one tiny S3 bucket and deletes it straight away.
 
 Practice in this order:
 
 1. Open CloudShell.
-2. Check the AWS CLI.
-3. List Regions.
-4. List Availability Zones.
-5. Check the Health Dashboard.
+2. Check the AWS CLI and who you are.
+3. See your IAM work and an S3 bucket from the CLI.
+4. List Regions.
+5. List Availability Zones.
+6. Check the Health Dashboard.
 
 ## Lab 1 - First Commands In CloudShell
 CloudShell is a terminal in your browser. The AWS CLI is already installed and you are already signed in. It has no extra cost.
@@ -81,7 +88,33 @@ Expected result:
 - `aws --version` shows a version number, for example `aws-cli/2.x.x`.
 - `aws configure list` shows where your credentials come from. You did not type any key.
 
-Do not post `aws sts get-caller-identity` output; it shows your account ID.
+Who am I? Run it with the account ID hidden:
+
+```bash
+aws sts get-caller-identity --query Arn --output text | sed -E 's/[0-9]{12}/XXXXXXXXXXXX/'
+```
+
+Expected: `arn:aws:iam::XXXXXXXXXXXX:user/Cloud-Unlock`. Never post the unmasked output.
+
+## Lab 1B - Your IAM Work And S3 From The CLI
+
+See what you built on Day 2, then create and delete a bucket with commands:
+
+```bash
+aws iam list-users --query "Users[].UserName" --output table
+aws iam list-groups --query "Groups[].GroupName" --output table
+aws iam list-attached-user-policies --user-name Cloud-Unlock
+aws s3 mb s3://cloud-unlock-<yourname>-cli-demo --region ap-south-1
+echo "Hello from Cloud Unlock" > hello.txt
+aws s3 cp hello.txt s3://cloud-unlock-<yourname>-cli-demo/
+aws s3 ls s3://cloud-unlock-<yourname>-cli-demo/
+aws s3 rb s3://cloud-unlock-<yourname>-cli-demo --force
+```
+
+Expected:
+- Your users and groups from Day 2 are listed.
+- `list-attached-user-policies` is empty, because `Cloud-Unlock` gets access from `AdminGroup`.
+- The bucket is created, the file is listed, then the bucket is removed. Open **S3** in the Console between the commands to see the same bucket.
 
 ## Lab 2 - Region And AZ Explorer
 
@@ -166,6 +199,7 @@ I listed the Regions. CloudShell would not load for the AZ command, so I will re
 | Amazon CloudFront (edge locations) | https://aws.amazon.com/cloudfront/ |
 | AWS CloudShell | https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html |
 | AWS CLI | https://aws.amazon.com/cli/ |
+| AWS CLI user guide (aws configure) | https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html |
 | AWS SDKs and tools | https://aws.amazon.com/developer/tools/ |
 | AWS CloudFormation (Infrastructure as Code) | https://aws.amazon.com/cloudformation/ |
 | AWS Health | https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html |

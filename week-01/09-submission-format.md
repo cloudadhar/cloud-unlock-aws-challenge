@@ -15,8 +15,6 @@ week-01/submissions/your-name/
 ├── README.md
 ├── notes.md
 ├── progress.md           (optional, from templates/progress-tracker.md)
-├── code-or-policies/
-│   └── custom-ec2-describe-only.json
 ├── challenge/            (optional)
 │   ├── architecture.png
 │   └── pillars.md
