@@ -10,20 +10,20 @@ Use this file before starting Week 2. Answers are discussed in class.
 5. Which pillar is about recovering from failure?
 6. What is the difference between a Region and an Availability Zone?
 7. When should you use CloudFront and edge locations?
-8. How do you choose a Region?
-9. What does AWS manage in the shared responsibility model?
-10. What does the customer manage?
+8. What is the difference between an IAM user, group and role?
+9. Why do we attach policies to groups instead of users?
+10. What are Effect, Action and Resource in an IAM policy?
 11. Why should the root user not be used daily?
 12. Why is MFA important for the root user?
 13. Do AWS Budgets stop spending automatically?
 14. Which cloud certification do we prepare for, and what are its four domains?
-15. What are the four ways to access AWS?
+15. What is least privilege? Give one example.
 16. What is the difference between elasticity and scalability?
 17. What is the difference between fixed and variable cost? What is BYOL?
 18. Name two tasks only the root user can do.
 19. When would you use more than one Region?
-20. What is a shared control? Give one example.
-21. Where do you find AWS compliance reports?
+20. An app on EC2 needs to read S3. Role or access keys? Why?
+21. If one policy allows and another denies, what happens?
 22. Budgets, Cost Explorer or Pricing Calculator: which one for an alert, past spend and an estimate?
 
 ## Quick Revision

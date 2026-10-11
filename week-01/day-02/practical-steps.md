@@ -2,92 +2,166 @@
 
 Keep this page open during the live class. Do each step with the trainer and tick it.
 
-Full explanations are in [05-global-infrastructure.md](./05-global-infrastructure.md) and [06-shared-responsibility.md](./06-shared-responsibility.md).
+Full explanations are in [04-account-security-lab.md](../day-01/04-account-security-lab.md), [05-iam-basics.md](./05-iam-basics.md) and [06-iam-hands-on-lab.md](./06-iam-hands-on-lab.md).
 
 ## Before The Practical
 
-- [ ] Root MFA and `cloud-unlock-learning-budget` from Day 1 are done
-- [ ] Signed in at https://console.aws.amazon.com/ with Region = **Mumbai**
+- [ ] Root MFA and IAM user `Cloud-Unlock` from Day 1 are done
+- [ ] Signed in **as root** at https://console.aws.amazon.com/ (for Practicals A and B only), Region = **Mumbai**
+- [ ] A private or incognito window ready (to test the learner users)
 
-Never run or post `aws sts get-caller-identity`; it shows your account ID. Do not enable any new Region.
+Never show your account ID, access keys, OTP or MFA QR code.
 
 ---
 
-## Practical 1 - CloudShell Region And AZ Explorer (7:40)
+## Practical A - Budget Alert (7:05)
 
-- [ ] 1. Click the **CloudShell** icon `>_` next to the search bar (or search `CloudShell`). Wait for it to load.
-- [ ] 2. Check the CLI:
+Create: budget `cloud-unlock-learning-budget` (as root)
+
+- [ ] 1. Search `Budgets`. Open **Billing and Cost Management** → **Budgets**.
+- [ ] 2. **Create budget** → **Use a template (simplified)**.
+- [ ] 3. **Zero spend budget**, or **Monthly cost budget** with amount `5` USD.
+- [ ] 4. Budget name: `cloud-unlock-learning-budget`.
+- [ ] 5. Email recipients: your email.
+- [ ] 6. **Create budget**. Check it is in the Budgets list.
+
+Type **BUDGET** in chat. Remember: a budget **alerts**, it does **not** stop spending.
+
+Screenshot: `budget-alert.png`.
+
+---
+
+## Practical B - AdminGroup, MFA And Sign In As Cloud-Unlock (7:15)
+
+Create: group `AdminGroup`, MFA device `iam-admin-mfa-phone` (as root)
+
+- [ ] 1. **IAM → User groups → Create group** → `AdminGroup`.
+- [ ] 2. Add users: tick `Cloud-Unlock`.
+- [ ] 3. Attach `AdministratorAccess` → **Create user group**.
+- [ ] 4. **IAM → Users → `Cloud-Unlock` → Permissions**: select `AdministratorAccess` **Attached directly** → **Remove**.
+- [ ] 5. Same user → **Security credentials** → **Assign MFA device** → `iam-admin-mfa-phone` → **Authenticator app** → scan → two codes → **Add MFA**.
+- [ ] 6. **IAM → Dashboard → Account alias → Create** (for example `cloudunlock-yourname`). The sign-in URL now hides your account ID.
+- [ ] 7. **Sign out of root.** Open the alias sign-in URL. Sign in as `Cloud-Unlock` with password + MFA code.
+- [ ] 8. Check: top right shows `Cloud-Unlock`, not root.
+
+Type **ADMIN** in chat. From now on, **everything is done as `Cloud-Unlock`**.
+
+Screenshot: `iam-group.png`.
+
+---
+
+## Practical 1 - Read User And Write User (7:45)
+
+Create (as `Cloud-Unlock`):
+
+| Group | Policy | User |
+|---|---|---|
+| `S3ReadOnlyGroup` | `AmazonS3ReadOnlyAccess` | `Cloud-Unlock-RUser` |
+| `S3FullAccessGroup` | `AmazonS3FullAccess` | `Cloud-Unlock-WUser` |
+
+- [ ] 1. **IAM → User groups → Create group** → `S3ReadOnlyGroup` → attach `AmazonS3ReadOnlyAccess` → **Create user group**.
+- [ ] 2. **IAM → Users → Create user** → `Cloud-Unlock-RUser` → console access → **Custom password** → **Next**.
+- [ ] 3. **Add user to group** → `S3ReadOnlyGroup` → **Next** → **Create user**.
+- [ ] 4. Repeat for `S3FullAccessGroup` / `AmazonS3FullAccess` / `Cloud-Unlock-WUser`.
+
+---
+
+## Practical 2 - Test Allowed vs Denied (8:00)
+
+- [ ] 1. Incognito window → alias sign-in URL → sign in as `Cloud-Unlock-RUser`.
+- [ ] 2. Open **S3**: the list opens (**allowed**).
+- [ ] 3. **Create bucket** → try to create → **Access Denied**.
+- [ ] 4. Sign out. Sign in as `Cloud-Unlock-WUser` → **Create bucket** `cloud-unlock-<yourname>-wuser-test` → it **works** (allowed).
+- [ ] 5. Delete that bucket now (select → **Delete** → type the name).
+
+Type **DENIED** in chat when you see the error.
+
+Screenshots: `iam-allowed.png`, `iam-denied.png`.
+
+---
+
+## Practical 3 - AWS CLI In CloudShell (8:10)
+
+No access keys needed: CloudShell uses the user you are signed in with (`Cloud-Unlock`). On your own laptop, `aws configure` asks for an access key; never share it or put it on GitHub.
+
+- [ ] 1. Region **Mumbai** → click the **CloudShell** icon `>_` next to the search bar. Wait for it to load.
+- [ ] 2. Who am I? (the account ID is hidden with `sed`)
 
 ```bash
 aws --version
-aws configure list
+aws sts get-caller-identity --query Arn --output text | sed -E 's/[0-9]{12}/XXXXXXXXXXXX/'
 ```
 
-Expected: a version like `aws-cli/2.x.x`. No access keys were typed.
+Expected: `arn:aws:iam::XXXXXXXXXXXX:user/Cloud-Unlock`
 
-- [ ] 3. List Regions:
+- [ ] 3. See today's IAM work:
 
 ```bash
-aws ec2 describe-regions --query "Regions[].RegionName" --output text
+aws iam list-users --query "Users[].UserName" --output table
+aws iam list-groups --query "Groups[].GroupName" --output table
+aws iam list-attached-group-policies --group-name AdminGroup --output table
+aws iam list-attached-user-policies --user-name Cloud-Unlock
 ```
 
-Expected: you can find `ap-south-1`. Type **MUMBAI** in chat.
+Expected: the last command shows an **empty** list. `Cloud-Unlock` gets admin access from `AdminGroup`.
 
-- [ ] 4. See opt-in Regions:
+- [ ] 4. Regions and AZs (Day 1 revision):
 
 ```bash
-aws ec2 describe-regions --all-regions --query "Regions[].[RegionName,OptInStatus]" --output table
+aws ec2 describe-availability-zones --region ap-south-1 --query "AvailabilityZones[].[ZoneName,ZoneId]" --output table
 ```
 
-Expected: some show `not-opted-in`, for example `ap-south-2`. Do **not** enable them.
-
-- [ ] 5. List Mumbai Availability Zones:
+- [ ] 5. S3 from the CLI (replace `<yourname>`; bucket names are unique worldwide):
 
 ```bash
-aws ec2 describe-availability-zones --region ap-south-1 --query "AvailabilityZones[].[ZoneName,ZoneId,State]" --output table
+aws s3 mb s3://cloud-unlock-<yourname>-cli-demo --region ap-south-1
+echo "Hello from Cloud Unlock" > hello.txt
+aws s3 cp hello.txt s3://cloud-unlock-<yourname>-cli-demo/
+aws s3 ls s3://cloud-unlock-<yourname>-cli-demo/
 ```
 
-Expected: several AZs, each `available`. Take your screenshot here.
-
-- [ ] 6. Compare with N. Virginia:
+- [ ] 6. Open **S3** in the Console: the same bucket and file are there.
+- [ ] 7. Clean up now:
 
 ```bash
-aws ec2 describe-availability-zones --region us-east-1 --query "AvailabilityZones[].ZoneName" --output text
+aws s3 rb s3://cloud-unlock-<yourname>-cli-demo --force
 ```
 
-- [ ] 7. Close CloudShell.
+Type **CLI** in chat when your bucket is created and deleted.
 
-Screenshot: `region-az-output.png` (Region list and Mumbai AZ table, account ID hidden).
+Screenshot: `cli-output.png` (masked ARN and IAM lists).
 
 ---
 
-## Practical 2 - AWS Health Dashboard (8:05)
+## Practical 4 - Custom Policy And Switch Role (8:30, quick)
 
-- [ ] 1. Search `Health`. Open **AWS Health Dashboard**.
-- [ ] 2. **Service health** → filter **Asia Pacific (Mumbai)**.
-- [ ] 3. **Your account health** → check open issues and scheduled changes.
-- [ ] 4. Write one line in `notes.md`: what did it show for Mumbai?
+Back in the normal window as `Cloud-Unlock`:
 
-Then write your Region choice for a shopping app like Flipkart or Myntra (customer data must stay in India):
+- [ ] 1. **IAM → Policies → Create policy → JSON** → paste:
 
-```text
-Compliance:
-Latency:
-Service availability:
-Cost:
-My Region choice:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Effect": "Allow", "Action": ["ec2:Describe*"], "Resource": "*" }
+  ]
+}
 ```
+
+- [ ] 2. **Next** → name `CustomEC2DescribeOnly` → **Create policy**.
+- [ ] 3. **IAM → Roles → Create role** → **AWS account** → **This account** → **Next**.
+- [ ] 4. Tick `ReadOnlyAccess` → **Next** → name `TrainingReadOnlyRole` → **Create role**.
+- [ ] 5. Top right account menu → **Switch role** → account: your alias → role: `TrainingReadOnlyRole` → **Switch role**.
+- [ ] 6. Try to create anything: denied (read-only).
+- [ ] 7. Account menu → **Switch back**.
+
+Type **ROLE** in chat when you switched.
 
 ---
 
-## Practical 3 - AWS Artifact (8:35)
+## Homework - Password Policy
 
-- [ ] 1. Search `Artifact`. Open **AWS Artifact**.
-- [ ] 2. Left menu: **Reports**.
-- [ ] 3. Search `ISO`, then `SOC`.
-- [ ] 4. Click one report. Read its title and description.
-- [ ] 5. Do **not** download or accept anything.
-- [ ] 6. Write one line in `notes.md`: the report name and who might ask for it (a college, a bank client, an auditor).
+- [ ] **IAM → Account settings → Password policy → Edit** → **Custom** → minimum length `12`, require a number and a symbol → **Save changes**.
 
 ---
 
@@ -95,11 +169,13 @@ My Region choice:
 
 | Problem | Try this |
 |---|---|
-| CloudShell keeps loading | Wait 1-2 minutes, refresh. Check the Region is Mumbai. |
-| `aws configure list` shows no keys | That is normal in CloudShell. |
-| Your `ap-south-1a` differs from a friend's | Compare the **ZoneId** column instead. |
-| `UnauthorizedOperation` error | Sign in as root for this lab, or follow the trainer's screen. |
-| Artifact asks you to accept terms | Do not accept. Reading the list is enough. |
+| Budgets page shows an error | Create the budget as root. |
+| Alias name already taken | Add your name or a number. |
+| Switch role says "invalid information" | Check the alias and the exact role name `TrainingReadOnlyRole`. |
+| `Cloud-Unlock-RUser` can do everything | Make sure it is only in `S3ReadOnlyGroup`. |
+| MFA "codes not valid" | Set phone time to automatic; two **different** codes. |
+| CloudShell keeps loading | Wait 1-2 minutes, refresh, Region = Mumbai. |
+| `BucketAlreadyExists` | Bucket names are unique worldwide: add a number. |
 
 Type **STUCK** in chat with one line about the problem.
 
@@ -107,10 +183,12 @@ Type **STUCK** in chat with one line about the problem.
 
 ## After Class
 
-- [ ] Screenshot `region-az-output.png` saved
-- [ ] Health Dashboard line, Region choice, card sort answers and Artifact report in `notes.md`
-- [ ] Week 1 submission PR started ([09-submission-format.md](../09-submission-format.md))
+- [ ] Screenshots: `budget-alert.png`, `iam-group.png`, `iam-allowed.png`, `iam-denied.png`, `cli-output.png`
+- [ ] Password policy set (homework above)
+- [ ] `custom-ec2-describe-only.json` saved in `code-or-policies/`
+- [ ] Week 1 submission PR ([09-submission-format.md](../09-submission-format.md))
 - [ ] LinkedIn post with `#CloudUnlock`
+- [ ] End of week: delete `Cloud-Unlock-RUser`, `Cloud-Unlock-WUser`, the two S3 groups, `CustomEC2DescribeOnly`, `TrainingReadOnlyRole`, any `cli-demo` bucket. Keep `Cloud-Unlock` and `AdminGroup`.
 
 <div align="center">
 

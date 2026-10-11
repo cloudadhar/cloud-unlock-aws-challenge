@@ -11,7 +11,7 @@ This week is about basics. Before IAM, storage, or servers, first understand wha
 Go step by step. Do not finish everything in one sitting.
 - First understand these words: cloud, Region, Availability Zone, shared responsibility, root user.
 - Create your account **before the Day 1 live class** (see below).
-- Secure the root user and set a budget alert on Day 1, before you explore anything else.
+- Day 1: secure the root user with MFA and create an IAM admin user. Day 2: start with a budget alert and an IAM admin group, before you explore anything else.
 - If the optional challenge feels hard, skip it for now.
 - Submit whatever you complete with honest notes. Do not stay silent.
 
@@ -25,10 +25,9 @@ Keep ready: a phone with an authenticator app (Google Authenticator, Microsoft A
 - You know the six advantages of cloud computing, basic cloud economics and the six Well-Architected pillars.
 - You know the AWS certification path and common cloud roles.
 - You can sign in, switch Regions and find your credits/Free Tier page.
-- You know the four ways to access AWS and ran your first commands in CloudShell.
 - You know what Regions, Availability Zones and edge locations are.
-- You know what AWS secures, what you secure, what is shared, and where to find compliance reports.
-- Your root user has MFA and you have a budget alert.
+- You can explain IAM users, groups, policies and roles, and you practised least privilege (allowed vs denied).
+- Your root user has MFA, you have a budget alert, and you work as an IAM user in an admin group (not as root).
 
 ## Practice Sequence
 
@@ -37,9 +36,9 @@ Keep ready: a phone with an authenticator app (Google Authenticator, Microsoft A
 | 01 | Sat (Day 1) | Why cloud and the problems it solves | [01-cloud-foundations.md](./day-01/01-cloud-foundations.md) |
 | 02 | Sat (Day 1) | Careers, certifications, opportunities and networking | [02-well-architected-and-careers.md](./day-01/02-well-architected-and-careers.md) |
 | 03 | Sat (Day 1) | Create your account and tour the Console | [03-account-setup-console-tour.md](./day-01/03-account-setup-console-tour.md) |
-| 04 | Sat (Day 1) | Root MFA and budget alert | [04-account-security-lab.md](./day-01/04-account-security-lab.md) |
-| 05 | Sun (Day 2) | Regions, AZs, edge locations, ways to access AWS, CloudShell | [05-global-infrastructure.md](./day-02/05-global-infrastructure.md) |
-| 06 | Sun (Day 2) | Shared responsibility model | [06-shared-responsibility.md](./day-02/06-shared-responsibility.md) |
+| 04 | Sat + Sun | Root MFA + IAM admin user (Day 1) · budget + IAM group (Day 2) | [04-account-security-lab.md](./day-01/04-account-security-lab.md) |
+| 05 | Sun (Day 2) | IAM basics: users, groups, policies, roles, least privilege | [05-iam-basics.md](./day-02/05-iam-basics.md) |
+| 06 | Sun (Day 2) | IAM hands-on: read-only groups, allowed vs denied, custom policy, switch role | [06-iam-hands-on-lab.md](./day-02/06-iam-hands-on-lab.md) |
 | 07 | Optional | Sale-day shopping app architecture and cost estimate challenge | [07-optional-challenge.md](./07-optional-challenge.md) |
 | 08 | End of week | Clean up | [08-cleanup.md](./08-cleanup.md) |
 | 09 | End of week | Submit your work | [09-submission-format.md](./09-submission-format.md) |
@@ -53,7 +52,9 @@ PDF guides: [Day 1](./pdf/Day01_Learner_Guide.pdf) | [Day 2](./pdf/Day02_Learner
 ## Minimum Submission For Week 1
 - Root MFA proof (no QR code)
 - Budget alert proof
-- Region/AZ CLI output (account ID hidden)
+- IAM user and IAM group proof (account ID hidden)
+- One allowed and one `Access Denied` screenshot
+- Your custom policy JSON
 - One short note on what you understood and where you got stuck
 - LinkedIn post link
 
@@ -65,11 +66,10 @@ PDF guides: [Day 1](./pdf/Day01_Learner_Guide.pdf) | [Day 2](./pdf/Day02_Learner
 | Cloud economics (Task 1.4) | Domain 1 | Cost Optimization | Rightsize, automate |
 | Well-Architected pillars (Task 1.2) | Domain 1 | All six | Design with the six pillars |
 | Regions and AZs (Task 3.2) | Domain 3 | Reliability | Use multiple AZs |
-| Ways to access AWS (Task 3.1) | Domain 3 | Operational Excellence | Automate with CLI and IaC |
-| Shared responsibility (Task 2.1) | Domain 2 | Security | Know AWS vs customer duties |
-| Compliance, AWS Artifact (Task 2.2) | Domain 2 | Security | Use AWS reports as evidence |
+| Least privilege, IAM policies and roles (Task 2.3) | Domain 2 | Security | Grant only what is needed; roles instead of access keys |
 | Root MFA (Task 2.3) | Domain 2 | Security | Protect the root user |
 | Budgets (Task 4.2) | Domain 4 | Cost Optimization | Monitor cost from day one |
+| IAM user and group (Task 2.3) | Domain 2 | Security | Do daily work as an IAM user; manage permissions with groups |
 
 ## Rules
 Read [../RULES.md](../RULES.md). Never share access keys, MFA QR codes, OTPs, card details or your account ID.

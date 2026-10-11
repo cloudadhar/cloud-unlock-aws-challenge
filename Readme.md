@@ -79,8 +79,8 @@ A new week folder is uploaded here every Saturday. Every folder has the same str
 | Session | Day | Date | Topic | What we cover | Real-life example | Hands-on | Status |
 |:-:|:-:|:-:|---|---|---|---|:-:|
 | **S1** | Sat | 10 Oct | [Cloud Unlock kickoff: careers, certifications + a safe AWS account](week-01/day-01) | What is cloud, ☁️ cloud careers and jobs, 🏆 AWS certification path, 💼 opportunities, 🤝 networking, 🚀 learning and projects, 🎙️ live Q&A | 🛒 Amazon Great Indian Festival night: refresh, Add to Cart, pay, My Orders | Console tour, **root MFA**, **IAM admin user** | ✅ |
-| **S2** | Sun | 11 Oct | [Global infrastructure + shared responsibility](week-01/day-02) | Regions, AZs, edge, 4 ways to access AWS, shared responsibility, compliance | 🏏 IPL final streaming fast on your phone; a shopping app keeping data in India | **Budget alert**, **IAM admin group**, **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | 🔴 |
-| **S3** | Sat | TBA | IAM roles, policies + least privilege | Users, groups, policies, least privilege, MFA, password policy, access keys | 🎓 College ERP: students, faculty and admin see different things | Read-only group, custom policy, switch role | ⏳ |
+| **S2** | Sun | 11 Oct | [Budget alert + IAM: users, groups, policies, roles](week-01/day-02) | Budgets, IAM groups, policies (JSON), roles, least privilege, MFA, password policy | 🎓 College ERP: students, faculty and admin see different things | **Budget alert**, **AdminGroup**, read-only groups, allowed vs denied, switch role | 🔴 |
+| **S3** | Sat | TBA | Ways to access AWS, CloudShell + shared responsibility | Regions/AZs revision, Console/CLI/SDK/IaC, Health Dashboard, shared responsibility, compliance | 🏏 IPL final streaming fast on your phone; a shopping app keeping data in India | **CloudShell** Region/AZ explorer, Health Dashboard, AWS Artifact | ⏳ |
 | **S4** | Sun | TBA | Security, governance + compliance | Roles, Identity Center, Organizations, CloudTrail, Config, KMS, GuardDuty, Shield, WAF, Security Hub | 🔔 Instagram "new login, was this you?" alert | Read-only security checks | ⏳ |
 | **S5** | Sat | TBA | Storage | S3 classes, versioning, lifecycle, Block Public Access, EBS, EFS, FSx, Storage Gateway, Backup | 📸 Instagram / Google Photos photos and Google Docs version history | Private S3 bucket + version recovery | ⏳ |
 | **S6** | Sun | TBA | Networking + your first EC2 | VPC, subnets, security groups vs NACLs, Route 53, VPN/Direct Connect, EC2 instance types | 🏫 College campus: gates, guards, open library, staff-only rooms | One EC2 web server via Session Manager | ⏳ |
@@ -108,7 +108,7 @@ A new week folder is uploaded here every Saturday. Every folder has the same str
 |---|:-:|:-:|
 | 🟧 1. Cloud Concepts | **24%** | S1, S7, S8, S10, S11 |
 | 🟦 2. Security and Compliance | **30%** | S1-S4 |
-| 🟩 3. Cloud Technology and Services | **34%** | S2, S5-S10 |
+| 🟩 3. Cloud Technology and Services | **34%** | S1, S3, S5-S10 |
 | 🟪 4. Billing, Pricing and Support | **12%** | S1, S11, S12 |
 
 Exam: 65 questions (50 scored + 15 unscored), 90 minutes, pass mark 700/1000, no penalty for guessing. Check [aws.amazon.com/certification](https://aws.amazon.com/certification/) for current details.
@@ -122,12 +122,12 @@ Exam: 65 questions (50 scored + 15 unscored), 90 minutes, pass mark 700/1000, no
 | 1.2 | Well-Architected Framework and its six pillars | S10, S12 | ⬜ |
 | 1.3 | Migration: AWS CAF, migration strategies | S8 | ⬜ |
 | 1.4 | Cloud economics: fixed vs variable cost, BYOL, rightsizing, economies of scale | S1, S11 | ⬜ |
-| 2.1 | Shared responsibility model | S2 | ⬜ |
-| 2.2 | Security, governance, compliance (Artifact, CloudTrail, Config, encryption) | S2, S4 | ⬜ |
+| 2.1 | Shared responsibility model | S3 | ⬜ |
+| 2.2 | Security, governance, compliance (Artifact, CloudTrail, Config, encryption) | S3, S4 | ⬜ |
 | 2.3 | Access management (IAM, root user, MFA, Identity Center, least privilege) | S1, S2, S3, S4 | ⬜ |
 | 2.4 | Security services and resources (WAF, Shield, GuardDuty, Trusted Advisor) | S4 | ⬜ |
-| 3.1 | Ways to deploy and operate (Console, CLI, SDK, IaC; deployment models) | S2, S10 | ⬜ |
-| 3.2 | Global infrastructure (Regions, AZs, edge locations) | S2, S7 | ⬜ |
+| 3.1 | Ways to deploy and operate (Console, CLI, SDK, IaC; deployment models) | S3, S10 | ⬜ |
+| 3.2 | Global infrastructure (Regions, AZs, edge locations) | S1, S3, S7 | ⬜ |
 | 3.3 | Compute (EC2, containers, serverless, Auto Scaling, load balancers) | S6, S7 | ⬜ |
 | 3.4 | Databases (RDS, Aurora, DynamoDB, ElastiCache, DMS) | S8 | ⬜ |
 | 3.5 | Networking (VPC, security groups, NACLs, Route 53, VPN, Direct Connect) | S6 | ⬜ |
@@ -152,6 +152,7 @@ Exam: 65 questions (50 scored + 15 unscored), 90 minutes, pass mark 700/1000, no
 
 - 📜 [RULES.md](RULES.md): safety, submission and fair-play rules
 - 🟠 [week-01](week-01): your first week ([Day 1](week-01/day-01) · [Day 2](week-01/day-02))
+- 🔵 [week-02](week-02): [Day 3](week-02/day-03)
 
 <div align="center">
 

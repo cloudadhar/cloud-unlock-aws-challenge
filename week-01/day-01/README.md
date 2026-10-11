@@ -29,7 +29,7 @@ PDF guide: [Day 1 Learner Guide](../pdf/Day01_Learner_Guide.pdf)
 - Read after class: cloud economics, IaaS/PaaS/SaaS and the six pillars (taught again in S7, S10 and S11).
 - You can sign in, switch Regions and find your Free Tier or credits page.
 - Your root user has MFA, and you have an IAM admin user for daily work.
-- Also shown today: Region, Availability Zone, edge location, Local Zone and Wavelength Zone ([Day 2 terms](../day-02/05-global-infrastructure.md)).
+- Also shown today: Region, Availability Zone, edge location, Local Zone and Wavelength Zone ([terms](../../week-02/day-03/01-cloudshell-and-global-infrastructure.md)).
 - You can name tasks only the root user can do, and tell Budgets, Cost Explorer and Pricing Calculator apart.
 
 ## Today's Deliverables

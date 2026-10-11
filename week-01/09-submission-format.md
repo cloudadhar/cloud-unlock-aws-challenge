@@ -15,14 +15,19 @@ week-01/submissions/your-name/
 ├── README.md
 ├── notes.md
 ├── progress.md           (optional, from templates/progress-tracker.md)
+├── code-or-policies/
+│   └── custom-ec2-describe-only.json
 ├── challenge/            (optional)
 │   ├── architecture.png
 │   └── pillars.md
 └── screenshots/
     ├── console-region.png
-    ├── region-az-output.png
     ├── root-mfa.png
-    └── budget-alert.png
+    ├── budget-alert.png
+    ├── iam-user.png
+    ├── iam-group.png
+    ├── iam-allowed.png
+    └── iam-denied.png
 ```
 
 ## README Template
@@ -35,10 +40,10 @@ Your Name
 
 ## Topics Practiced
 - Cloud basics and the six pillars
-- Console tour and CloudShell
-- Regions and Availability Zones
-- Shared responsibility
-- Root MFA and budget alert
+- Cloud basics, careers and certifications
+- Console tour, Regions and Availability Zones
+- IAM users, groups, policies, roles, least privilege
+- Root MFA, IAM admin user and group, budget alert
 
 ## What I Learned
 Two or three lines in your own words.
@@ -48,15 +53,16 @@ One problem you faced. If everything worked, write "No blocker".
 
 ## Screenshots Added
 - Console and Region
-- Region/AZ output
+- IAM allowed and denied
 - Root MFA
 - Budget alert
+- IAM user and group
 
 ## LinkedIn Post
 https://www.linkedin.com/...
 
 ## Key Takeaway
-AWS secures the cloud. I secure what I build in the cloud.
+Least privilege: give only the permissions needed, nothing extra.
 ```
 
 ## Minimum Accepted Submission

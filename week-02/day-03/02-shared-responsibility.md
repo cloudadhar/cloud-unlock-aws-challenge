@@ -1,4 +1,4 @@
-# Day 2 - Shared Responsibility Model
+# Day 3 - Shared Responsibility Model
 
 Exam tasks: 2.1 (shared responsibility), 2.2 (compliance and governance)
 

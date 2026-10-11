@@ -15,11 +15,11 @@ Write about:
 - One Well-Architected pillar you found interesting
 - Why you set up root MFA and a budget alert on day one
 
-## Day 2 - Global Infrastructure And Shared Responsibility
+## Day 2 - Budget Alert + IAM
 Write about:
-- Region vs Availability Zone in your own words
-- Your first CloudShell command and what it showed
-- One thing AWS secures and one thing you secure
+- Why permissions go on a group, not a user
+- What happened when `Cloud-Unlock-RUser` tried to create a bucket
+- User vs role in your own words
 
 ## Weekly Wrap-Up
 Write about:

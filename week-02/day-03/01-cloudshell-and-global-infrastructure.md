@@ -1,8 +1,8 @@
-# Day 2 - Global Infrastructure and Ways To Access AWS
+# Day 3 - Global Infrastructure (Revision), Ways To Access AWS + CloudShell
 
 Exam tasks: 3.1 (ways to access and operate AWS), 3.2 (global infrastructure)
 
-## Terms
+## Terms (revision: taught on Day 1)
 - **Region**: geographic area with multiple isolated locations (Mumbai `ap-south-1`).
 - **Availability Zone (AZ)**: one or more data centres in a Region with separate power and networking.
 - **Edge location**: site close to users that caches content (CloudFront).
@@ -149,7 +149,7 @@ Tip: check the [AWS global infrastructure map](https://aws.amazon.com/about-aws/
 | Problem | Try this |
 |---|---|
 | CloudShell keeps loading | Wait 2 minutes, refresh the page, check the Region is Mumbai |
-| `UnauthorizedOperation` error | Sign in as the root user for this lab (IAM users come in Week 2) |
+| `UnauthorizedOperation` error | Check `Cloud-Unlock` is in `AdminGroup`; sign out and in again |
 | My `ap-south-1a` is different from my friend's | Normal. Compare the **ZoneId** column instead |
 
 ```text
